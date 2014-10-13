@@ -8,7 +8,7 @@ SNS
 引入js文件即可：
 
 ```html
-<script src="path/to/sns.js"></script>
+<script src="assets/js/sns.js"></script>
 ```
 
 
@@ -33,7 +33,7 @@ HTML:
     <svg><use xlink:href="path/to/sns.svg#icon-iconfont-douban" transform="translate(0 0)"></use></svg>
 </i>
 /* 引入sns.js */
-<script src="path/to/sns.js"></script>
+<script src="assets/js/sns.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
         var config = {}; /* 配置 */ 
@@ -46,6 +46,13 @@ HTML:
 ```
 
 CSS:
+引入CSS文件：
+
+```html
+<link rel="stylesheet" href="assets/css/sns.css">
+```
+
+或者在你的HTML页面或者其它CSS文件里：
 
 ```css
 .icon svg {
