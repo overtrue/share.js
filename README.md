@@ -1,7 +1,11 @@
 SNS
 ===
 
-一键分享到微博，QQ空间，腾讯微博，人人，豆瓣
+一键分享到微博，QQ空间，腾讯微博，人人，豆瓣，图标使用svg。
+
+![demo](./assets/images/demo.png)
+
+或者直接浏览我的博客http://overtrue.me内容页查看效果。
 
 # 安装
 
