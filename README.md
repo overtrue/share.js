@@ -3,7 +3,7 @@ SNS
 
 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣，图标使用svg。
 
-![demo](./assets/images/demo.png)
+![demo](./assets/images/demo.jpg)
 
 或者直接浏览我的博客 http://overtrue.me 内容页查看效果。
 
