@@ -46,7 +46,8 @@ HTML:
 ```
 
 CSS:
-引入CSS文件：
+
+直接引入CSS文件：
 
 ```html
 <link rel="stylesheet" href="assets/css/sns.css">
