@@ -5,7 +5,7 @@ SNS
 
 ![demo](./assets/images/demo.png)
 
-或者直接浏览我的博客http://overtrue.me内容页查看效果。
+或者直接浏览我的博客 http://overtrue.me 内容页查看效果。
 
 # 安装
 
