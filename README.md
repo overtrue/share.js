@@ -36,7 +36,8 @@ HTML:
 <i data-id="douban" class="icon">
     <svg><use xlink:href="path/to/sns.svg#icon-iconfont-douban" transform="translate(0 0)"></use></svg>
 </i>
-/* 引入sns.js */
+
+<!-- 引入sns.js -->
 <script src="assets/js/sns.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -48,6 +49,8 @@ HTML:
     });
 </script>
 ```
+
+当然，上面的html你可以根据自己喜好随便改，只要调用到对应的方法就好了。
 
 CSS:
 
