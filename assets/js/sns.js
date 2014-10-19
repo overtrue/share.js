@@ -55,14 +55,15 @@ var SNS ={
         this.open_window(share_url);
     },
 
-    get_window_params: function(width,height) {
-        var top = ($(window).height()/2)-(height/2),
-            left = ($(window).width()/2)-(width/2);
+    get_window_params: function(width, height) {
+        var top  = ($(window).height() / 2) - (height / 2),
+            left = ($(window).width() / 2) - (width / 2);
+        
         return ['toolbar=0,status=0,resizable=1,width=' + width + ',height=' + height + ',left='+left+',top='+top].join('');
     },
 
     open_window: function(url) {
-        window.open(url,this.w, this.get_window_params(680,420));
+        window.open(url, "popup", this.get_window_params(680,420));
     },
 
     init: function(custom_config) {
