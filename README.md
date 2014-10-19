@@ -86,14 +86,14 @@ CSS:
 所有配置**可选**， 通常默认就满足需求：
 
 ```js
-var config:{
-		url    : '', // 网址，默认使用window.location.href
-		site   : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" /> 
-		title  : '', // 标题，默认读取document.title
-		desc   : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" /> 
-		pic    : '', // 图片, 默认取网页中第一个img标签
-		target : '_blank' //打开方式
-	};
+var config = {
+	url    : '', // 网址，默认使用window.location.href
+	site   : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" /> 
+	title  : '', // 标题，默认读取document.title
+	desc   : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" /> 
+	pic    : '', // 图片, 默认取网页中第一个img标签
+	target : '_blank' //打开方式
+   };
 	
 SNS.init(config);
 ```
