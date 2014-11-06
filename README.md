@@ -21,22 +21,23 @@ SNS
 HTML:
 
 ```html
-<i data-id="sina" class="icon">
-    <svg><use xlink:href="path/to/sns.svg#icon-iconfont-sina" transform="translate(0 0)"></use></svg>
-</i>
-<i data-id="qzone" class="icon">
-    <svg><use xlink:href="path/to/sns.svg#icon-iconfont-qzone" transform="translate(0 0)"></use></svg>
-</i>
-<i data-id="qq" class="icon">
-    <svg><use xlink:href="path/to/sns.svg#icon-iconfont-qq" transform="translate(0 0)"></use></svg>
-</i>
-<i data-id="renren" class="icon">
-    <svg><use xlink:href="path/to/sns.svg#icon-iconfont-renren" transform="translate(0 0)"></use></svg>
-</i>
-<i data-id="douban" class="icon">
-    <svg><use xlink:href="path/to/sns.svg#icon-iconfont-douban" transform="translate(0 0)"></use></svg>
-</i>
-
+<div class="sns-share">
+    <i data-id="sina" class="icon">
+        <svg><use xlink:href="assets/images/sns.svg#icon-iconfont-sina" transform="translate(0 0)"></use></svg>
+    </i>
+    <i data-id="qzone" class="icon">
+        <svg><use xlink:href="assets/images/sns.svg#icon-iconfont-qzone" transform="translate(0 0)"></use></svg>
+    </i>
+    <i data-id="qq" class="icon">
+        <svg><use xlink:href="assets/images/sns.svg#icon-iconfont-qq" transform="translate(0 0)"></use></svg>
+    </i>
+    <i data-id="renren" class="icon">
+        <svg><use xlink:href="assets/images/sns.svg#icon-iconfont-renren" transform="translate(0 0)"></use></svg>
+    </i>
+    <i data-id="douban" class="icon">
+        <svg><use xlink:href="assets/images/sns.svg#icon-iconfont-douban" transform="translate(0 0)"></use></svg>
+    </i>
+</div>
 <!-- 引入sns.js -->
 <script src="assets/js/sns.js"></script>
 <script type="text/javascript">
