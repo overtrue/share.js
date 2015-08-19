@@ -3,7 +3,7 @@ Share.js
 
 一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。
 
-或者直接浏览我的博客 http://overtrue.me 内容页查看效果。
+或者直接浏览我的博客 http://overtrue.me 或者 http://laravel.so 内容页查看效果。
 
 # 安装
 
@@ -38,14 +38,6 @@ HTML:
         $('.sns-share').share();
     });
 </script>
-```
-
-CSS:
-
-直接引入CSS文件：
-
-```html
-<link rel="stylesheet" href="share/sns.css">
 ```
 
 ## 微信分享
