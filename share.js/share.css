@@ -9,12 +9,13 @@
 
 .iconfont {
   font-family:"iconfont" !important;
-  font-size:24px;
+  font-size:22px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .icon-qzone:before { content: "\e600"; }
 .icon-qq:before { content: "\e601"; }
 .icon-weibo:before { content: "\e602"; }
@@ -23,6 +24,26 @@
 
 .sns-share-component a {
   position:relative;
+  text-decoration:none;
+}
+
+.sns-share-component .icon{
+    font-size: 22px;
+    background: #555;
+    border-radius: 50%;
+    line-height: 100px;
+    margin: 10px 0;
+    padding: 8px;
+    color:#fff;
+    -webkit-transition: background 0.2s ease-out 0s;
+    -moz-transition: background 0.2s ease-out 0s;
+    transition: background 0.2s ease-out 0s;
+
+}
+
+.sns-share-component .icon:hover{
+  font-size: 22px;
+  background: #666;
 }
 
 .sns-share-component a .wechat-qrcode {
