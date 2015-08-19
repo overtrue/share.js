@@ -52,7 +52,7 @@ CSS:
 
 微信的二维码生成依赖：https://github.com/jeromeetienne/jquery-qrcode, 请引入此项目中：jquery.qrcode.min.js 即可。
 
-# 自定义配置
+## 自定义配置
 
 所有配置**可选**， 通常默认就满足需求：
 
