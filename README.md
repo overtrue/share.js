@@ -1,4 +1,4 @@
-Share.js
+[Share.js](http://overtrue.me/share.js/)
 ===
 
 一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。
