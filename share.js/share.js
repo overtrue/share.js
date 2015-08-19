@@ -15,10 +15,6 @@
 
         var $settings = $.extend(true, $defaults, $options);
 
-        for($key in $settings){
-            $settings[$key] = encodeURIComponent($settings[$key]);
-        }
-
         var $urls = {
             qzone: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + $settings.url + "&title=" + $settings.title + "&desc=" + $settings.description + "&summary=" + $settings.description + "&site=" + $settings.site + ($settings.image? $settings.image : ''),
             qq: "http://share.v.t.qq.com/index.php?c=share&a=index&url=" + $settings.url + "&title=" + $settings.title + $settings.description + ($settings.image ? "&pic=" + $settings.image : ''),
@@ -43,7 +39,7 @@
                 $wechat.append('<span class="wechat-qrcode"></span>');
                 $wechat.find('.wechat-qrcode').qrcode({ width: $settings.qrcodeWidth, height: $settings.qrcodeWidth - 10, text: $settings.url});
                 $wechat.find('.wechat-qrcode').css({right: - $settings.qrcodeWidth / 2, display: 'block' });
-                $wechat.find('.wechat-qrcode').append(decodeURIComponent($settings.qrcodeTitle));
+                $wechat.find('.wechat-qrcode').append($settings.qrcodeTitle);
             } else {
                 console.error('未加载 jquery.qrcode.min.js, 无法支持微信分享');
                 $wechat.hide();
