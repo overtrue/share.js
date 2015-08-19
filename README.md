@@ -20,15 +20,14 @@ Share.js
 HTML:
 
 ```html
-<div class="main">
-    <div class="sns-share">
-        <a href="" class="qzone"><i class="icon iconfont icon-qzone"></i></a>
-        <a href="" class="qq"><i class="icon iconfont icon-qq"></i></a>
-        <a href="" class="weibo"><i class="icon iconfont icon-weibo"></i></a>
-        <a href="" class="wechat"><i class="icon iconfont icon-wechat"></i></a>
-        <a href="" class="douban"><i class="icon iconfont icon-douban"></i></a>
-    </div>
+<div class="sns-share">
+    <a href="" class="qzone"><i class="icon iconfont icon-qzone"></i></a>
+    <a href="" class="qq"><i class="icon iconfont icon-qq"></i></a>
+    <a href="" class="weibo"><i class="icon iconfont icon-weibo"></i></a>
+    <a href="" class="wechat"><i class="icon iconfont icon-wechat"></i></a>
+    <a href="" class="douban"><i class="icon iconfont icon-douban"></i></a>
 </div>
+
 <!-- 引入sns.js -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <!-- <script src="jquery.qrcode.min.js"></script> -->
