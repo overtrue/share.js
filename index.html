@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="share.js/share.css">
   </head>
   <body>
     <section class="page-header">
@@ -84,6 +85,14 @@ $(<span class="pl-s"><span class="pl-pds">'</span>.sns-share<span class="pl-pds"
 
 <p>MIT</p>
 
+      <div class="sns-share">
+        <a href="" class="qzone"><i class="icon iconfont icon-qzone"></i></a>
+        <a href="" class="qq"><i class="icon iconfont icon-qq"></i></a>
+        <a href="" class="weibo"><i class="icon iconfont icon-weibo"></i></a>
+        <a href="" class="wechat"><i class="icon iconfont icon-wechat"></i></a>
+        <a href="" class="douban"><i class="icon iconfont icon-douban"></i></a>
+      </div>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/overtrue/share.js">Share.js</a> is maintained by <a href="https://github.com/overtrue">overtrue</a>.</span>
 
@@ -91,7 +100,13 @@ $(<span class="pl-s"><span class="pl-pds">'</span>.sns-share<span class="pl-pds"
       </footer>
 
     </section>
-
-  
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="jquery.qrcode.min.js"></script>
+    <script src="share.js/share.js"></script>
+    <script>
+        $(function(){
+            $('.sns-share').share();
+        });
+    </script>
   </body>
 </html>
