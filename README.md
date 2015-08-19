@@ -1,4 +1,4 @@
-SNS
+Share.js
 ===
 
 一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。
@@ -10,8 +10,8 @@ SNS
 引入js文件即可：
 
 ```html
-<link rel="stylesheet" href="share/sns.css">
-<script src="share/sns.js"></script>
+<link rel="stylesheet" href="share.css">
+<script src="share.js"></script>
 ```
 
 
