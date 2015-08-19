@@ -3,8 +3,8 @@
         var $image = $(document).find('img:first').attr('src');
 
         var $defaults = {
-            url: document.title,
-            site: window.location.href,
+            url: window.location.href,
+            site: document.title,
             title: $(document.head).find('[name="site-title"]').text() || document.title,
             description: $(document.head).find('[name="description"]').text(),
             image: $image ? $image : '',
