@@ -5,8 +5,8 @@
         var $defaults = {
             url: window.location.href,
             site: document.title,
-            title: $(document.head).find('[name="site-title"]').text() || document.title,
-            description: $(document.head).find('[name="description"]').text(),
+            title: $(document.head).find('[name="site-title"]').attr('content') || document.title,
+            description: $(document.head).find('[name="description"]').attr('content'),
             image: $image ? $image : '',
             target : '_blank',
             qrcodeTitle: "微信扫一扫：分享",
@@ -15,9 +15,12 @@
 
         var $settings = $.extend(true, $defaults, $options);
 
+        $settings['title']       = encodeURIComponent($settings['title']);
+        $settings['site']        = encodeURIComponent($settings['site']);
+        $settings['description'] = encodeURIComponent($settings['description']);
+
         var $urls = {
             qzone: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + $settings.url + "&title=" + $settings.title + "&desc=" + $settings.description + "&summary=" + $settings.description + "&site=" + $settings.site + ($settings.image? $settings.image : ''),
-            qq: "http://share.v.t.qq.com/index.php?c=share&a=index&url=" + $settings.url + "&title=" + $settings.title + $settings.description + ($settings.image ? "&pic=" + $settings.image : ''),
             qq: "http://connect.qq.com/widget/shareqq/index.html?url="+ $settings.url + "&title=" + $settings.title + "&source=" + $settings.site + "&desc=" + $settings.description,
             weibo: "http://service.weibo.com/share/share.php?url=" + $settings.url + "&title=" + $settings.title + $settings.description + ($settings.image ? "&pic=" + $settings.image : ''),
             wechat: 'javascript:;',
