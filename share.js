@@ -11,6 +11,7 @@
             target : '_blank',
             qrcodeTitle: "微信扫一扫：分享",
             qrcodeWidth: 100,
+            weiboAppendDescription: true,
         };
 
         var $settings = $.extend(true, $defaults, $options);
@@ -22,7 +23,7 @@
         var $urls = {
             qzone: "http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=" + $settings.url + "&title=" + $settings.title + "&desc=" + $settings.description + "&summary=" + $settings.description + "&site=" + $settings.site + ($settings.image? $settings.image : ''),
             qq: "http://connect.qq.com/widget/shareqq/index.html?url="+ $settings.url + "&title=" + $settings.title + "&source=" + $settings.site + "&desc=" + $settings.description,
-            weibo: "http://service.weibo.com/share/share.php?url=" + $settings.url + "&title=" + $settings.title + $settings.description + ($settings.image ? "&pic=" + $settings.image : ''),
+            weibo: "http://service.weibo.com/share/share.php?url=" + $settings.url + "&title=" + $settings.title + ($settings.weiboAppendDescription ? $settings.description : '') + ($settings.image ? "&pic=" + $settings.image : ''),
             wechat: 'javascript:;',
             douban: "http://shuo.douban.com/!service/share?href=" + $settings.url + "&name=" + $settings.title + "&text=" + $settings.description + ( $settings.image ? "&image=" + $settings.image : '') + '&starid=0&aid=0&style=11&stime=&sig='
         };
