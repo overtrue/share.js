@@ -46,7 +46,7 @@ var $config = {
 	//...
    };
 
-$('.sns-share').share($config);
+$('.share-bar').share($config);
 ```
 
 可用的配置有：
