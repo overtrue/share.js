@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<!--[if lte IE 6 ]> <html class="ie ie6 lte-ie7 lte-ie8" lang="zh-CN"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie ie7 lte-ie7 lte-ie8" lang="zh-CN"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie ie8 lte-ie8" lang="zh-CN"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie ie9" lang="zh-CN"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="zh-CN"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣</title>
+        <meta name="description" content="Share.js 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣 by overtrue." />
+        <link rel="stylesheet" href="http://overtrue.me/bootstrap-theme-slim/css/bootstrap.css" media="screen">
+        <link rel="stylesheet" href="http://overtrue.me/bootstrap-theme-slim/css/ionicons.css" media="screen">
+        <link rel="stylesheet" href="http://overtrue.me/bootstrap-theme-slim/css/app.css" media="screen">
+        <link rel="stylesheet" href="./share.css" media="screen">
+        </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1 id="container">Share.js 示例</h1>
+            </div>
+            <div class="jumbotron">
+            <h1>大寒</h1>
+                <p>大寒是二十四节气之一最后一个节气。每年1月20日前后太阳到达黄经300°时为大寒。《月令七十二候集解》：“十二月中，解见前（小寒）。”《授时通考·天时》引《三礼义宗》：“大寒为中者，上形于小寒，故谓之大……寒气之逆极，故谓大寒。”这时寒潮南下频繁，是中国大部分地区一年中的最冷时期，风大，低温，地面积雪不化，呈现出冰天雪地、天寒地冻的严寒景象。这个时期，铁路、邮电、石油、海上运输等部门要特别注意及早采取预防大风降温、大雪等灾害性天气的措施。农业上要加强牲畜和越冬作物的防寒防冻。</p>
+                <p><a class="btn btn-primary btn-lg">更多</a></p>
+            </div>
+            <div class="shares"></div>
+        </div>
+
+        <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://overtrue.me/share.js/jquery.qrcode.min.js"></script>
+        <script src="./share.js"></script>
+
+        <script>
+            $(function(){
+                $('.shares').share();
+            });
+        </script>
+    </body>
+</html>

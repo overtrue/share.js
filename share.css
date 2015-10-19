@@ -25,6 +25,8 @@
 .sns-share-component a {
   position:relative;
   text-decoration:none;
+  margin: 3px;
+  display:inline-block;
 }
 
 .sns-share-component .icon{
@@ -32,7 +34,6 @@
     background: #555;
     border-radius: 50%;
     line-height: 100px;
-    margin: 10px 0;
     padding: 8px;
     color:#fff;
     -webkit-transition: background 0.2s ease-out 0s;
@@ -48,7 +49,6 @@
 
 .sns-share-component a .wechat-qrcode {
   position:absolute;
-  bottom: 40px;
   visibility: hidden;
   -webkit-transform: translate(0, 10px);
   -ms-transform: translate(0, 10px);

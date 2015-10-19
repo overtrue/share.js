@@ -20,21 +20,15 @@
 HTML:
 
 ```html
-<div class="sns-share">
-    <a href="" class="qzone"><i class="icon iconfont icon-qzone"></i></a>
-    <a href="" class="qq"><i class="icon iconfont icon-qq"></i></a>
-    <a href="" class="weibo"><i class="icon iconfont icon-weibo"></i></a>
-    <a href="" class="wechat"><i class="icon iconfont icon-wechat"></i></a>
-    <a href="" class="douban"><i class="icon iconfont icon-douban"></i></a>
-</div>
+<div class="share-bar"></div>
 
 <!-- 引入sns.js -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<!-- <script src="jquery.qrcode.min.js"></script> -->
+<script src="jquery.qrcode.min.js"></script> <!-- for QRcode -->
 <script src="share.js"></script>
 <script>
     $(function(){
-        $('.sns-share').share();
+        $('.share-bar').share();
     });
 </script>
 ```
@@ -49,16 +43,27 @@ HTML:
 
 ```js
 var $config = {
-	url    : '', // 网址，默认使用 window.location.href
-	site   : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
-	title  : '', // 标题，默认读取 document.title
-	description : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
-	iamge    : '', // 图片, 默认取网页中第一个img标签
-	target : '_blank' //打开方式
+	//...
    };
 
 $('.sns-share').share($config);
 ```
+
+可用的配置有：
+
+```js
+
+url    : '', // 网址，默认使用 window.location.href
+site   : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+title  : '', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
+description : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+iamge    : '', // 图片, 默认取网页中第一个img标签
+target : '_blank' //打开方式
+qrcodeTitle: "微信扫一扫：分享", // 微信二维码提示文字
+qrcodeWidth: 100, // 二维码宽度
+sites: ['qzone', 'qq', 'weibo','wechat', 'douban'], // 启用的站点
+```
+
 
 # License
 
