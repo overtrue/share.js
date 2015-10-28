@@ -1,0 +1,16 @@
+{
+  "name": "jquery-qrcode",
+  "version": "1.0",
+  "main": "jquery.qrcode.min.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "examples",
+    "*.html",
+    "Makefile",
+    "src"
+  ]
+}

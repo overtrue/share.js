@@ -1,0 +1,81 @@
+
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:22px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-qzone:before { content: "\e600"; }
+.icon-qq:before { content: "\e601"; }
+.icon-weibo:before { content: "\e602"; }
+.icon-wechat:before { content: "\e603"; }
+.icon-douban:before { content: "\e604"; }
+
+.sns-share-component {
+  a {
+    position:relative;
+    text-decoration:none;
+    margin: 3px;
+    display:inline-block;
+
+    &.wechat {
+      &:hover .wechat-qrcode {
+        visibility: visible;
+        -webkit-transform: translate(0, 0px);
+        -ms-transform: translate(0, 0px);
+        transform: translate(0, 0px);
+        opacity: 1;
+        color: #666666;
+      }
+
+      .wechat-qrcode {
+        position:absolute;
+        visibility: hidden;
+        -webkit-transform: translate(0, 10px);
+        -ms-transform: translate(0, 10px);
+        transform: translate(0, 10px);
+        opacity: 0;
+        -webkit-transition: all .8s ease;
+        padding: 10px;
+        border:1px solid #888;
+        z-index: 9999;
+        background: #fff;
+        font-size: 12px;
+        text-align:center;
+
+        canvas {
+          display: block;
+          margin:5px;
+        }
+      }
+    }
+  }
+
+  .icon{
+    font-size: 22px;
+    background: #555;
+    border-radius: 50%;
+    line-height: 100px;
+    padding: 8px;
+    color:#fff;
+    -webkit-transition: background 0.2s ease-out 0s;
+    -moz-transition: background 0.2s ease-out 0s;
+    transition: background 0.2s ease-out 0s;
+
+    &:hover{
+      font-size: 22px;
+      background: #666;
+    }
+  }
+}

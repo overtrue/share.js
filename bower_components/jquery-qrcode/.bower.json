@@ -1,0 +1,26 @@
+{
+  "name": "jquery-qrcode",
+  "main": "jquery.qrcode.min.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "examples",
+    "*.html",
+    "Makefile",
+    "src"
+  ],
+  "homepage": "https://github.com/gcusnieux/jquery-qrcode",
+  "_release": "31e056e747",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "31e056e747aa539996fd3b2924c06e8c4f292ad6"
+  },
+  "_source": "git://github.com/gcusnieux/jquery-qrcode.git",
+  "_target": "*",
+  "_originalSource": "jquery-qrcode",
+  "_direct": true
+}
