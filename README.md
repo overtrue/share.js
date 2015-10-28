@@ -7,15 +7,25 @@
 
 # 安装
 
-引入js文件即可：
+有两种安装方式：
+
+1. 使用 [Bower](http://bower.io)
+
+```shell
+bower install overtrue-share.js
+```
+
+2. 手动下载或者 git clone 本项目。
+
+# 使用
+
+
+引入js文件：
 
 ```html
 <link rel="stylesheet" href="share.css">
 <script src="share.js"></script>
 ```
-
-
-# 使用
 
 HTML:
 

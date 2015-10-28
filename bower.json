@@ -1,0 +1,22 @@
+{
+  "name": "share.js",
+  "main": "share.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/overtrue/share.js",
+  "authors": [
+    "overtrue <anzhengchao@gmail.com>"
+  ],
+  "description": "分享链接到中国的社交网站的jQuery插件",
+  "keywords": [
+    "share",
+    "SNS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
