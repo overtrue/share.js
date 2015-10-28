@@ -20,22 +20,20 @@ bower install overtrue-share.js
 # 使用
 
 
-引入js文件：
-
-```html
-<link rel="stylesheet" href="share.css">
-<script src="share.js"></script>
-```
-
 HTML:
 
 ```html
 <div class="share-bar"></div>
 
-<!-- 引入sns.js -->
+<!-- share.css -->
+<link rel="stylesheet" href="dist/css/share.css">
+
+<!-- jQuery -->
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-<script src="jquery.qrcode.min.js"></script> <!-- for QRcode -->
-<script src="share.js"></script>
+
+<!-- share.js -->
+<script src="dist/js/jquery.qrcode.min.js"></script> <!-- for QRcode -->
+<script src="dist/js/share.js"></script>
 <script>
     $(function(){
         $('.share-bar').share();
