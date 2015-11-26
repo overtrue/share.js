@@ -119,10 +119,10 @@
       background:#7bc549;
     }
   }
-  .icon-wechat .wechat-qrcode{opacity:0;filter:alpha(opacity=0);visibility:hidden;position:absolute;z-index:9;top:-205px;left:-84px;width:200px;height:192px;color:#666;font-size:12px;text-align:center;background-color:#fff;box-shadow:0 2px 10px #aaa;transition:all 200ms;-webkit-tansition:all 350ms;-moz-transition:all 350ms}
-  .icon-wechat .wechat-qrcode h4{font-weight:normal;height:26px;line-height:26px;font-size:12px; background-color:#f3f3f3; margin:0;padding:0;}
+  .icon-wechat .wechat-qrcode{opacity:0;filter:alpha(opacity=0);visibility:hidden;position:absolute;z-index:9;top:-205px;left:-84px;width:200px;height:192px;color:#666;font-size:12px;text-align:center;background-color:#fff;box-shadow:0 2px 10px #aaa;transition:all 200ms;-webkit-tansition:all 350ms;-moz-transition:all 350ms; }
+  .icon-wechat .wechat-qrcode h4{font-weight:normal;height:26px;line-height:26px;font-size:12px; background-color:#f3f3f3; margin:0;padding:0;color: #777; }
   .icon-wechat .wechat-qrcode .qrcode{width:105px; margin:10px auto;}
-  .icon-wechat .wechat-qrcode .help p{line-height:16px;padding:0;margin:0;}
+  .icon-wechat .wechat-qrcode .help p{font-weight:normal;line-height:16px;padding:0;margin:0;}
   .icon-wechat .wechat-qrcode:after{content:'';position:absolute;left:50%;margin-left:-6px;bottom:-13px;width:0;height:0;border-width:8px 6px 6px 6px;border-style:solid;border-color:#fff transparent transparent transparent}
   .icon-wechat:hover .wechat-qrcode{opacity:1;filter:alpha(opacity=100);visibility:visible}
 }
