@@ -1,0 +1,20 @@
+{
+  "devDependencies": {
+    "event-stream": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-combine-media-queries": "*",
+    "gulp-concat": "*",
+    "gulp-cssmin": "*",
+    "gulp-load-plugins": "*",
+    "gulp-rename": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-size": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-notify": "*",
+    "gulp-imagemin":"*",
+    "gulp-livereload": "*"
+  }
+}

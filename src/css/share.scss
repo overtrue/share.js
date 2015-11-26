@@ -1,0 +1,128 @@
+
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot'); /* IE9*/
+  src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-tencent:before { content: "\e607"; }
+.icon-qq:before { content: "\e601"; }
+.icon-weibo:before { content: "\e602"; }
+.icon-linkedin:before { content: "\e600"; }
+.icon-wechat:before { content: "\e603"; }
+.icon-douban:before { content: "\e604"; }
+.icon-qzone:before { content: "\e606"; }
+.icon-diandian:before { content: "\e608"; }
+.icon-facebook:before { content: "\e609"; }
+.icon-google:before { content: "\e60b"; }
+.icon-twitter:before { content: "\e60c"; }
+
+.share-component {
+  a {
+    position:relative;
+    text-decoration:none;
+    margin: 3px;
+    display:inline-block;
+  }
+
+  .iconfont {
+    display:inline-block;
+    width: 32px;
+    height: 32px;
+    overflow:hidden;
+    font-size: 20px;
+    border-radius: 50%;
+    line-height: 32px;
+    border:1px solid #eee;
+    text-align: center;
+    transition: background 0.6s ease-out 0s;
+
+    &:hover{
+      background: #f4f4f4;
+      color: #fff;
+    }
+  }
+
+  .icon-weibo{
+    line-height:28px; color:#E6162D;border-color:#E6162D;
+    &:hover{
+      background:#E6162D
+    }
+  }
+  .icon-tencent{
+    line-height:28px;color:#56b6e7;border-color:#56b6e7;
+    &:hover{
+      background:#56b6e7
+    }
+  }
+  .icon-qq{
+    line-height:28px;color:#56b6e7;border-color:#56b6e7;
+    &:hover{
+      background:#56b6e7;
+    }
+  }
+  .icon-qzone{
+    line-height:29px;color:#ffe21f;border-color:#ffe21f;
+    &:hover{
+      background:#ffe21f;
+    }
+  }
+  .icon-douban{
+    line-height:28px;color:#33b045;border-color:#33b045;
+    &:hover{
+      background:#33b045;
+    }
+  }
+  .icon-linkedin{
+    line-height:28px;color:#0077B5;border-color:#0077B5;
+    &:hover{
+      background:#0077B5;
+    }
+  }
+  .icon-facebook {
+    color:#44619D;border-color:#44619D;
+    &:hover{
+      background:#44619D;
+    }
+  }
+  .icon-google {
+    color:#db4437;border-color:#db4437;
+    &:hover{
+      background:#db4437;
+    }
+  }
+  .icon-twitter {
+    color:#55acee;border-color:#55acee;
+    &:hover{
+      background:#55acee;
+    }
+  }
+  .icon-diandian {color:#307DCA; border-color:#307DCA;
+
+    &:hover{
+      background:#307DCA;
+    }
+  }
+  .icon-wechat{
+    line-height:28px;position:relative;color:#7bc549;border-color:#7bc549;
+    &:hover{
+      background:#7bc549;
+    }
+  }
+  .share-icon-wechat .wechat-qrcode{opacity:0;filter:alpha(opacity=0);visibility:hidden;position:absolute;z-index:9;top:-205px;left:-84px;width:200px;height:192px;color:#666;font-size:12px;text-align:center;background-color:#fff;box-shadow:0 2px 10px #aaa;transition:all 200ms;-webkit-tansition:all 350ms;-moz-transition:all 350ms}
+  .share-icon-wechat .wechat-qrcode h4{font-weight:normal;height:26px;line-height:26px;font-size:12px; background-color:#f3f3f3; margin:0;padding:0;}
+  .share-icon-wechat .wechat-qrcode .qrcode{width:105px; margin:10px auto;}
+  .share-icon-wechat .wechat-qrcode .help p{line-height:16px;padding:0;margin:0;}
+  .share-icon-wechat .wechat-qrcode:after{content:'';position:absolute;left:50%;margin-left:-6px;bottom:-13px;width:0;height:0;border-width:8px 6px 6px 6px;border-style:solid;border-color:#fff transparent transparent transparent}
+  .share-icon-wechat:hover .wechat-qrcode{opacity:1;filter:alpha(opacity=100);visibility:visible}
+}
