@@ -1,6 +1,6 @@
 {
   "name": "social-share.js",
-  "description": "[Share.js](http://overtrue.me/share.js/) ===",
+  "description": "create social share buttons on your site.",
   "version": "1.0.0",
   "main": "dist/js/share.min.js",
   "dependencies": {},
