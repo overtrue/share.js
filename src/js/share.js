@@ -6,7 +6,7 @@
  *
  * @example
  * <pre>
- * $('.share-bar').share();
+ * $('.share-components').share();
  *
  * // or
  *
@@ -66,6 +66,12 @@
             createWechat($container, $data);
         });
 
+        /**
+         * Create site icons
+         *
+         * @param {Object|String} $container
+         * @param {Object}        $data
+         */
         function createIcons ($container, $data) {
             var $sites = getSites($data.sites, $data.disabled);
 
@@ -83,6 +89,12 @@
             }
         }
 
+        /**
+         * Create the wechat icon and QRCode.
+         *
+         * @param {Object|String} $container
+         * @param {Object}        $data
+         */
         function createWechat ($container, $data) {
             var $wechat = $container.find('a.icon-wechat');
 
@@ -90,6 +102,14 @@
             $wechat.find('.qrcode').qrcode({ size: 100, text: $data.url});
         }
 
+        /**
+         * Get available site lists.
+         *
+         * @param {Array|String} $sites
+         * @param {Array|String} $disabled
+         *
+         * @return {Array}
+         */
         function getSites ($sites, $disabled) {
             if (typeof $sites == 'string') {$sites = $sites.split(',')};
             if (typeof $disabled == 'string') {$disabled = $disabled.split(',')};
@@ -97,6 +117,14 @@
             return $sites.filter(function(v){ return !($disabled.indexOf(v) > -1) }).concat($disabled.filter(function(v){ return !($sites.indexOf(v) > -1)}));
         }
 
+        /**
+         * Build the url of icon.
+         *
+         * @param {String} $name
+         * @param {Object} $data
+         *
+         * @return {String}
+         */
         function makeUrl ($name, $data) {
             var $template = $templates[$name];
 
