@@ -5,6 +5,8 @@
 
 ![image](https://cloud.githubusercontent.com/assets/1472352/11419582/4c7ff370-9463-11e5-8b83-356940a2824e.png)
 
+[DEMO](http://overtrue.me/share.js/)
+
 或者直接浏览我的博客 http://overtrue.me 或者 http://laravel.so 内容页查看效果。
 
 # 安装
