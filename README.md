@@ -13,10 +13,10 @@
 
 有两种安装方式：
 
-1. 使用 [Bower](http://bower.io)
+1. 使用 [npm](https://npmjs.com)
 
 ```shell
-bower install overtrue-share.js
+npm install social-share.js
 ```
 
 2. 手动下载或者 git clone 本项目。
