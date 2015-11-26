@@ -3,7 +3,7 @@
 
 一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。
 
-![image](https://cloud.githubusercontent.com/assets/1472352/11419452/5a935840-9462-11e5-99a1-b73e1e5fc901.png)
+![image](https://cloud.githubusercontent.com/assets/1472352/11419582/4c7ff370-9463-11e5-8b83-356940a2824e.png)
 
 或者直接浏览我的博客 http://overtrue.me 或者 http://laravel.so 内容页查看效果。
 
