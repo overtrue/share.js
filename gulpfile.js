@@ -28,7 +28,6 @@ var vendorFiles = {
   styles: [
   ],
   scripts: [
-    basePaths.bower + 'jquery-qrcode/jquery.qrcode.min.js',
   ],
   fonts: [
   ]
@@ -42,6 +41,7 @@ var gulp = require('gulp');
 
 var es = require('event-stream');
 var gutil = require('gulp-util');
+var concat = require('gulp-concat');
 var del = require('del');
 
 var plugins = require("gulp-load-plugins")({
@@ -71,16 +71,15 @@ var clean = function(path, cb) {
 
 gulp.task('css', function(){
   // app css
-  return gulp.src(vendorFiles.styles.concat(appFiles.styles))
-    .pipe(plugins.rubySass({
+  return plugins.rubySass(vendorFiles.styles.concat(appFiles.styles), {
       style: sassStyle, sourcemap: sourceMap, precision: 2
-    }))
+    })
     // .pipe(plugins.concat('style.min.css'))
-    .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4', 'Firefox >= 4'))
-    .pipe(isProduction ? plugins.combineMediaQueries({
-      log: true
-    }) : gutil.noop())
-    .pipe(isProduction ? plugins.cssmin() : gutil.noop())
+    .pipe(plugins.autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    // .pipe(isProduction ? plugins.cssmin() : gutil.noop())
     .pipe(plugins.size())
     .on('error', function(err){
       new gutil.PluginError('CSS', err, {showStack: true});
@@ -91,11 +90,8 @@ gulp.task('css', function(){
 });
 
 gulp.task('scripts', function(){
-  // 第三方不用压缩
-  gulp.src(vendorFiles.scripts).pipe(gulp.dest(paths.scripts.dest));
-
   return gulp.src(appFiles.scripts)
-    // .pipe(plugins.concat('app.js'))
+    .pipe(concat('share.js'))
     .pipe(isProduction ? plugins.uglify() : gutil.noop())
     .pipe(plugins.size())
     .pipe(plugins.notify())
