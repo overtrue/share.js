@@ -6,10 +6,9 @@
   <meta name="description" content="Share.js 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣 by overtrue.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/overtrue/share.js/master/dist/css/share.min.css" />
+  <link rel="stylesheet" href="./dist/css/share.min.css" media="screen">
 </head>
 <body>
   <section class="page-header">
@@ -20,65 +19,114 @@
     <a href="https://github.com/overtrue/share.js/tarball/master" class="btn">Download .tar.gz</a>
   </section>
 
-  <section class="main-content markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-sharejs" class="anchor" href="#sharejs" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://overtrue.me/share.js/">Share.js</a></h1>
+<article class="main-content markdown-body entry-content" itemprop="mainContentOfPage"><h1><a id="user-content-sharejs" class="anchor" href="#sharejs" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://overtrue.me/share.js/">Share.js</a></h1>
 
-  <p>一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。</p>
+<p>一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。</p>
 
-  <p>或者直接浏览我的博客 <a href="http://overtrue.me">http://overtrue.me</a> 或者 <a href="http://laravel.so">http://laravel.so</a> 内容页查看效果。</p>
+<p><div class="share-component"></div></p>
 
-  <h1><a id="user-content-安装" class="anchor" href="#安装" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h1>
+<p>或者直接浏览我的博客 <a href="http://overtrue.me">http://overtrue.me</a> 或者 <a href="http://laravel.so">http://laravel.so</a> 内容页查看效果。</p>
 
-  <p>引入js文件即可：</p>
+<h1><a id="user-content-安装" class="anchor" href="#安装" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h1>
 
-  <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>share.css<span class="pl-pds">"</span></span>&gt;
-  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>share.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<p>有两种安装方式：</p>
 
-  <h1><a id="user-content-使用" class="anchor" href="#使用" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用</h1>
+<ol>
+<li>使用 <a href="http://bower.io">Bower</a></li>
+</ol>
 
-  <p>HTML:</p>
+<div class="highlight highlight-source-shell"><pre>bower install overtrue-share.js</pre></div>
 
-  <div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-bar<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+<ol>
+<li>手动下载或者 git clone 本项目。</li>
+</ol>
 
-  <span class="pl-c">&lt;!-- 引入sns.js --&gt;</span>
-  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>jquery.qrcode.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt; <span class="pl-c">&lt;!-- for QRcode --&gt;</span>
-  &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>share.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-  <span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
-  <span class="pl-s1">    $(<span class="pl-k">function</span>(){</span>
-  <span class="pl-s1">        $(<span class="pl-s"><span class="pl-pds">'</span>.share-bar<span class="pl-pds">'</span></span>).share();</span>
-  <span class="pl-s1">    });</span>
-  <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+<h1><a id="user-content-使用" class="anchor" href="#使用" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用</h1>
 
-  <h2><a id="user-content-微信分享" class="anchor" href="#微信分享" aria-hidden="true"><span class="octicon octicon-link"></span></a>微信分享</h2>
+<p>HTML:</p>
 
-  <p>微信的二维码生成依赖：<a href="https://github.com/jeromeetienne/jquery-qrcode">https://github.com/jeromeetienne/jquery-qrcode</a>, 请引入此项目中：jquery.qrcode.min.js 即可。</p>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
 
-  <h2><a id="user-content-自定义配置" class="anchor" href="#自定义配置" aria-hidden="true"><span class="octicon octicon-link"></span></a>自定义配置</h2>
+<span class="pl-c">&lt;!-- share.css --&gt;</span>
+&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/css/share.css<span class="pl-pds">"</span></span>&gt;
 
-  <p>所有配置<strong>可选</strong>， 通常默认就满足需求：</p>
+<span class="pl-c">&lt;!-- jQuery --&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
 
-  <div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> $config <span class="pl-k">=</span> {
-      <span class="pl-c">//...</span>
-     };
+<span class="pl-c">&lt;!-- share.js --&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/js/jquery.qrcode.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt; <span class="pl-c">&lt;!-- for QRcode --&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/js/share.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+// 当你使用类名为 `share-component` 时不需要手动初始化</pre></div>
 
-  $(<span class="pl-s"><span class="pl-pds">'</span>.share-bar<span class="pl-pds">'</span></span>).share($config);</pre></div>
+<h2><a id="user-content-自定义配置" class="anchor" href="#自定义配置" aria-hidden="true"><span class="octicon octicon-link"></span></a>自定义配置</h2>
 
-  <p>可用的配置有：</p>
+<p>所有配置<strong>可选</strong>， 通常默认就满足需求：</p>
 
-  <div class="highlight highlight-source-js"><pre>url    <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 网址，默认使用 window.location.href</span>
-  site   <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 来源（QQ空间会用到）, 默认读取head标签：&lt;meta name="site" content="http://overtrue" /&gt;</span>
-  title  <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 标题，默认读取 document.title 或者 &lt;meta name="title" content="share.js" /&gt;</span>
-  description <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 描述, 默认读取head标签：&lt;meta name="description" content="PHP弱类型的实现原理分析" /&gt;</span>
-  iamge    <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 图片, 默认取网页中第一个img标签</span>
-  target <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>_blank<span class="pl-pds">'</span></span> <span class="pl-c">//打开方式</span>
-  qrcodeTitle<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>微信扫一扫：分享<span class="pl-pds">"</span></span>, <span class="pl-c">// 微信二维码提示文字</span>
-  qrcodeWidth<span class="pl-k">:</span> <span class="pl-c1">100</span>, <span class="pl-c">// 二维码宽度</span>
-  sites<span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>qzone<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>qq<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>weibo<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>wechat<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>douban<span class="pl-pds">'</span></span>], <span class="pl-c">// 启用的站点</span></pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> $config <span class="pl-k">=</span> {
+    <span class="pl-c">//...</span>
+   };
 
-  <h1><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+$(<span class="pl-s"><span class="pl-pds">'</span>.share-component<span class="pl-pds">'</span></span>).<span class="pl-en">share</span>($config);</pre></div>
 
-  <p>MIT</p>
+<p>可用的配置有：</p>
 
+<div class="highlight highlight-source-js"><pre>url                 <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 网址，默认使用 window.location.href</span>
+source              <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 来源（QQ空间会用到）, 默认读取head标签：&lt;meta name="site" content="http://overtrue" /&gt;</span>
+title               <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 标题，默认读取 document.title 或者 &lt;meta name="title" content="share.js" /&gt;</span>
+description         <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 描述, 默认读取head标签：&lt;meta name="description" content="PHP弱类型的实现原理分析" /&gt;</span>
+image               <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>, <span class="pl-c">// 图片, 默认取网页中第一个img标签</span>
+sites               <span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>qzone<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>qq<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>weibo<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>wechat<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>douban<span class="pl-pds">'</span></span>], <span class="pl-c">// 启用的站点</span>
+disabled            <span class="pl-k">:</span> [<span class="pl-s"><span class="pl-pds">'</span>google<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>facebook<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>twitter<span class="pl-pds">'</span></span>], <span class="pl-c">// 禁用的站点</span>
+wechatQrcodeTitle   <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>微信扫一扫：分享<span class="pl-pds">"</span></span>, <span class="pl-c">// 微信二维码提示文字</span>
+wechatQrcodeHelper  <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;p&gt;微信里点“发现”，扫一下&lt;/p&gt;&lt;p&gt;二维码便可将本文分享至朋友圈。&lt;/p&gt;<span class="pl-pds">'</span></span>,</pre></div>
+
+<p>以上选项均可通过标签 <code>data-xxx</code> 来设置：</p>
+
+<blockquote>
+<p>驼峰转为中横线，如<code>wechatQrcodeHelper</code> 的data标签为<code>data-wechat-qrcode-helper</code></p>
+</blockquote>
+
+<h5><a id="user-content-禁用-google设置分享的描述" class="anchor" href="#禁用-google设置分享的描述" aria-hidden="true"><span class="octicon octicon-link"></span></a>禁用 google、设置分享的描述</h5>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-disabled</span>=<span class="pl-s"><span class="pl-pds">"</span>google<span class="pl-pds">"</span></span> <span class="pl-e">data-description</span>=<span class="pl-s"><span class="pl-pds">"</span>Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="share-component" data-disabled="google" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
+
+<h5><a id="user-content-设置微信二维码标题" class="anchor" href="#设置微信二维码标题" aria-hidden="true"><span class="octicon octicon-link"></span></a>设置微信二维码标题</h5>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-wechat-qrcode-title</span>=<span class="pl-s"><span class="pl-pds">"</span>请打开微信扫一扫<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="share-component" data-wechat-qrcode-title="请打开微信扫一扫"></div>
+
+<h5><a id="user-content-针对特定站点使用不同的属性title-url-descriptionimage" class="anchor" href="#针对特定站点使用不同的属性title-url-descriptionimage" aria-hidden="true"><span class="octicon octicon-link"></span></a>针对特定站点使用不同的属性（title, url, description,image...）</h5>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-weibo-title</span>=<span class="pl-s"><span class="pl-pds">"</span>这个标题只有的分享到微博时有用，其它标题为全局标题<span class="pl-pds">"</span></span> <span class="pl-e">data-qq-title</span>=<span class="pl-s"><span class="pl-pds">"</span>分享到QQ时用此标题<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="share-component" data-weibo-title="这个标题只有的分享到微博时有用，其它标题为全局标题" data-qq-title="分享到QQ时用此标题"></div>
+
+<h3><a id="user-content-你也可以自定义图标" class="anchor" href="#你也可以自定义图标" aria-hidden="true"><span class="octicon octicon-link"></span></a>你也可以自定义图标</h3>
+
+<p>使用: <code>data-initialized="true"</code> 标签或者 <code>initialized</code> 配置项来禁用自动生成icon功能。</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-initialized</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>iconfont icon-weibo<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
+    &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>iconfont icon-qq<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
+    &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>iconfont icon-qzone<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+
+<div class="share-component" data-initialized="true">
+    <a href="#" class="iconfont icon-weibo"></a>
+    <a href="#" class="iconfont icon-qq"></a>
+    <a href="#" class="iconfont icon-qzone"></a>
+</div>
+
+<p>以上a标题会自动加上分享链接（<code>a</code> 标签必须带 <code>icon-NAME</code> 属性，不然分享链接不会自动加上）。</p>
+
+<p>欢迎贡献代码及提建议！</p>
+
+<h1><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>MIT</p>
     <div class="share-component"></div>
 
     <footer class="site-footer">
@@ -99,8 +147,8 @@
         .
       </span>
     </footer>
-  </section>
+</article>
   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-  <script src="https://raw.githubusercontent.com/overtrue/share.js/master/dist/js/share.min.js"></script>
+  <script src="./dist/js/share.min.js"></script>
 </body>
 </html>
