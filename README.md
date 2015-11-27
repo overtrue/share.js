@@ -103,7 +103,7 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 
 # 引用
 
-本项目中二维码生成部分用到了开源组件：[lrsjng/jquery-qrcode](https://github.com/lrsjng/jquery-qrcode)(MIT)
+本项目中二维码生成部分用到了开源组件：[lrsjng/jquery-qrcode](https://github.com/lrsjng/jquery-qrcode) (MIT License)
 
 # License
 
