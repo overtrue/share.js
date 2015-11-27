@@ -135,7 +135,7 @@
                     return $str.toUpperCase();
                 });
 
-                var $value = encodeURI($data[$camelCaseKey] || $data[$key]);
+                var $value = encodeURIComponent($data[$camelCaseKey] || $data[$key]);
                 $template = $template.replace(new RegExp('{{'+$key.toUpperCase()+'}}', 'g'), $value);
             }
 
@@ -143,5 +143,5 @@
         }
     };
 
-    $('.share-component').share();
+    $('.share-component,.social-share').share();
 })(jQuery);
