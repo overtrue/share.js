@@ -143,5 +143,5 @@
         }
     };
 
-    $('.share-component').share();
+    $('.share-component,.social-share').share();
 })(jQuery);

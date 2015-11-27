@@ -30,15 +30,11 @@ HTML:
 <div class="share-component"></div>
 
 <!-- share.css -->
-<link rel="stylesheet" href="dist/css/share.css">
-
-<!-- jQuery -->
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<link href="dist/css/share.min.css">
 
 <!-- share.js -->
-<script src="dist/js/jquery.qrcode.min.js"></script> <!-- for QRcode -->
-<script src="dist/js/share.js"></script>
-// 当你使用类名为 `share-component` 时不需要手动初始化
+<script src="dist/js/share.min.js"></script>
+// 当你使用类名为 `share-component` 或者 `social-share` 时不需要手动初始化
 ```
 
 ## 自定义配置
