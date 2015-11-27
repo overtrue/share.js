@@ -3,7 +3,8 @@
 
 一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
 
-![image](https://cloud.githubusercontent.com/assets/1472352/11433106/b027069e-94f3-11e5-912a-67792b4fe802.png)
+![qq20151127-0 2x](https://cloud.githubusercontent.com/assets/1472352/11433119/e939cafc-94f3-11e5-8f83-8451723c2d1b.png)
+
 
 [DEMO](http://overtrue.me/share.js/)
 
