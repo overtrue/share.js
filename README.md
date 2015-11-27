@@ -1,7 +1,7 @@
 [Share.js](http://overtrue.me/share.js/)
 ===
 
-一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。
+一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
 
 ![image](https://cloud.githubusercontent.com/assets/1472352/11419582/4c7ff370-9463-11e5-8b83-356940a2824e.png)
 
