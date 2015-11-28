@@ -75,7 +75,7 @@
         function createIcons ($container, $data) {
             var $sites = getSites($data.sites, $data.disabled);
 
-            for ($i in $sites) {
+            for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
                 var $url  = makeUrl($name, $data);
                 var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a href="javascript:;" class="iconfont icon-'+$name+'" target="_blank"></a>');
@@ -85,7 +85,10 @@
                 };
 
                 $link.attr('href', $url);
-                $container.append($link);
+
+                if (!$data.initialized) {
+                    $data.mode == 'prepend' ? $container.prepend($link) : $container.append($link);
+                }
             }
         }
 

@@ -7,6 +7,7 @@
   url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
+
 .iconfont {
   font-family:"iconfont" !important;
   font-size:16px;
@@ -18,10 +19,12 @@
 .icon-tencent:before { content: "\e607"; }
 .icon-qq:before { content: "\e601"; }
 .icon-weibo:before { content: "\e602"; }
-.icon-linkedin:before { content: "\e600"; }
 .icon-wechat:before { content: "\e603"; }
 .icon-douban:before { content: "\e604"; }
+.icon-heart:before { content: "\e605"; }
+.icon-like:before { content: "\e60a"; }
 .icon-qzone:before { content: "\e606"; }
+.icon-linkedin:before { content: "\e60d"; }
 .icon-diandian:before { content: "\e608"; }
 .icon-facebook:before { content: "\e609"; }
 .icon-google:before { content: "\e60b"; }
@@ -54,37 +57,37 @@
   }
 
   .icon-weibo{
-    line-height:28px; color:#E6162D;border-color:#E6162D;
+    color:#ff763b;border-color:#ff763b;
     &:hover{
-      background:#E6162D
+      background:#ff763b
     }
   }
   .icon-tencent{
-    line-height:28px;color:#56b6e7;border-color:#56b6e7;
+    color:#56b6e7;border-color:#56b6e7;
     &:hover{
       background:#56b6e7
     }
   }
   .icon-qq{
-    line-height:28px;color:#56b6e7;border-color:#56b6e7;
+    color:#56b6e7;border-color:#56b6e7;
     &:hover{
       background:#56b6e7;
     }
   }
   .icon-qzone{
-    line-height:29px;color:#ffe21f;border-color:#ffe21f;
+    color:#FDBE3D;border-color:#FDBE3D;
     &:hover{
-      background:#ffe21f;
+      background:#FDBE3D;
     }
   }
   .icon-douban{
-    line-height:28px;color:#33b045;border-color:#33b045;
+    color:#33b045;border-color:#33b045;
     &:hover{
       background:#33b045;
     }
   }
   .icon-linkedin{
-    line-height:28px;color:#0077B5;border-color:#0077B5;
+    color:#0077B5;border-color:#0077B5;
     &:hover{
       background:#0077B5;
     }
@@ -114,7 +117,7 @@
     }
   }
   .icon-wechat{
-    line-height:28px;position:relative;color:#7bc549;border-color:#7bc549;
+    position:relative;color:#7bc549;border-color:#7bc549;
     &:hover{
       background:#7bc549;
     }
