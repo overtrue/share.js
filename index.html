@@ -23,7 +23,7 @@
 
 <p>一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站，使用字体图标。</p>
 
-<p><div class="share-component"></div></p>
+<p><div class="social-share"></div></p>
 
 <p>或者直接浏览我的博客 <a href="http://overtrue.me">http://overtrue.me</a> 或者 <a href="http://laravel.so">http://laravel.so</a> 内容页查看效果。</p>
 
@@ -45,14 +45,14 @@
 
 <p>HTML:</p>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
 
 <span class="pl-c">&lt;!-- share.css --&gt;</span>
 &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/css/share.min.css<span class="pl-pds">"</span></span>&gt;
 
 <span class="pl-c">&lt;!-- share.js --&gt;</span>
 &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/js/share.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-// 当你使用类名为 `share-component` 或者 `social-share` 时不需要手动初始化</pre></div>
+// 当你使用类名为 `social-share` 或者 `social-share` 时不需要手动初始化</pre></div>
 
 <h2><a id="user-content-自定义配置" class="anchor" href="#自定义配置" aria-hidden="true"><span class="octicon octicon-link"></span></a>自定义配置</h2>
 
@@ -62,7 +62,7 @@
     <span class="pl-c">//...</span>
    };
 
-$(<span class="pl-s"><span class="pl-pds">'</span>.share-component<span class="pl-pds">'</span></span>).<span class="pl-en">share</span>($config);</pre></div>
+$(<span class="pl-s"><span class="pl-pds">'</span>.social-share<span class="pl-pds">'</span></span>).<span class="pl-en">share</span>($config);</pre></div>
 
 <p>可用的配置有：</p>
 
@@ -84,33 +84,33 @@ wechatQrcodeHelper  <span class="pl-k">:</span> <span class="pl-s"><span class="
 
 <h5><a id="user-content-禁用-google设置分享的描述" class="anchor" href="#禁用-google设置分享的描述" aria-hidden="true"><span class="octicon octicon-link"></span></a>禁用 google、设置分享的描述</h5>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-disabled</span>=<span class="pl-s"><span class="pl-pds">"</span>google<span class="pl-pds">"</span></span> <span class="pl-e">data-description</span>=<span class="pl-s"><span class="pl-pds">"</span>Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share<span class="pl-pds">"</span></span> <span class="pl-e">data-disabled</span>=<span class="pl-s"><span class="pl-pds">"</span>google<span class="pl-pds">"</span></span> <span class="pl-e">data-description</span>=<span class="pl-s"><span class="pl-pds">"</span>Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="share-component" data-disabled="google" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
+<div class="social-share" data-disabled="google" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
 
 <h5><a id="user-content-设置微信二维码标题" class="anchor" href="#设置微信二维码标题" aria-hidden="true"><span class="octicon octicon-link"></span></a>设置微信二维码标题</h5>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-wechat-qrcode-title</span>=<span class="pl-s"><span class="pl-pds">"</span>请打开微信扫一扫<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share<span class="pl-pds">"</span></span> <span class="pl-e">data-wechat-qrcode-title</span>=<span class="pl-s"><span class="pl-pds">"</span>请打开微信扫一扫<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="share-component" data-wechat-qrcode-title="请打开微信扫一扫"></div>
+<div class="social-share" data-wechat-qrcode-title="请打开微信扫一扫"></div>
 
 <h5><a id="user-content-针对特定站点使用不同的属性title-url-descriptionimage" class="anchor" href="#针对特定站点使用不同的属性title-url-descriptionimage" aria-hidden="true"><span class="octicon octicon-link"></span></a>针对特定站点使用不同的属性（title, url, description,image...）</h5>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-weibo-title</span>=<span class="pl-s"><span class="pl-pds">"</span>这个标题只有的分享到微博时有用，其它标题为全局标题<span class="pl-pds">"</span></span> <span class="pl-e">data-qq-title</span>=<span class="pl-s"><span class="pl-pds">"</span>分享到QQ时用此标题<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share<span class="pl-pds">"</span></span> <span class="pl-e">data-weibo-title</span>=<span class="pl-s"><span class="pl-pds">"</span>这个标题只有的分享到微博时有用，其它标题为全局标题<span class="pl-pds">"</span></span> <span class="pl-e">data-qq-title</span>=<span class="pl-s"><span class="pl-pds">"</span>分享到QQ时用此标题<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="share-component" data-weibo-title="这个标题只有的分享到微博时有用，其它标题为全局标题" data-qq-title="分享到QQ时用此标题"></div>
+<div class="social-share" data-weibo-title="这个标题只有的分享到微博时有用，其它标题为全局标题" data-qq-title="分享到QQ时用此标题"></div>
 
 <h3><a id="user-content-你也可以自定义图标" class="anchor" href="#你也可以自定义图标" aria-hidden="true"><span class="octicon octicon-link"></span></a>你也可以自定义图标</h3>
 
 <p>使用: <code>data-initialized="true"</code> 标签或者 <code>initialized</code> 配置项来禁用自动生成icon功能。</p>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-initialized</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share<span class="pl-pds">"</span></span> <span class="pl-e">data-initialized</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;
     &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share-icon icon-weibo<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
     &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share-icon icon-qq<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
     &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share-icon icon-qzone<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
 &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="share-component" data-initialized="true">
+<div class="social-share" data-initialized="true">
     <a href="#" class="social-share-icon icon-weibo"></a>
     <a href="#" class="social-share-icon icon-qq"></a>
     <a href="#" class="social-share-icon icon-qzone"></a>
@@ -120,19 +120,19 @@ wechatQrcodeHelper  <span class="pl-k">:</span> <span class="pl-s"><span class="
 
 <h3><a id="user-content-如果你想在分享icon列表中内置一些元素比如放一个收藏按钮在分享按钮的后面" class="anchor" href="#如果你想在分享icon列表中内置一些元素比如放一个收藏按钮在分享按钮的后面" aria-hidden="true"><span class="octicon octicon-link"></span></a>如果你想在分享icon列表中内置一些元素，比如放一个收藏按钮在分享按钮的后面：</h3>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span>&gt;
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share<span class="pl-pds">"</span></span>&gt;
     &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:;<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share-icon icon-heart<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
 &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="share-component"><a href="javascript:;" class="social-share-icon icon-heart"></a></div>
+<div class="social-share"><a href="javascript:;" class="social-share-icon icon-heart"></a></div>
 
 <p>这样并没有实现，因为结果是所有的分享按钮都创建在了收藏按钮的后面了，这时候你就可以用 <code>data-mode="prepend"</code> 来确定分享按钮创建的方式。</p>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>share-component<span class="pl-pds">"</span></span> <span class="pl-e">data-mode</span>=<span class="pl-s"><span class="pl-pds">"</span>prepend<span class="pl-pds">"</span></span>&gt;
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share<span class="pl-pds">"</span></span> <span class="pl-e">data-mode</span>=<span class="pl-s"><span class="pl-pds">"</span>prepend<span class="pl-pds">"</span></span>&gt;
     &lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>javascript:;<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>social-share-icon icon-heart<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
 &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
-<div class="share-component" data-mode="prepend">
+<div class="social-share" data-mode="prepend">
     <a href="javascript:;" class="social-share-icon icon-heart"></a>
 </div>
 
@@ -144,7 +144,7 @@ wechatQrcodeHelper  <span class="pl-k">:</span> <span class="pl-s"><span class="
 <h1><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
 <p>MIT</p>
-    <div class="share-component"></div>
+    <div class="social-share"></div>
 
     <footer class="site-footer">
       <span class="site-footer-owner">
