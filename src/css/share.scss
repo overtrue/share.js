@@ -1,5 +1,5 @@
 
-@font-face {font-family: "iconfont";
+@font-face {font-family: "socialshare";
   src: url('../fonts/iconfont.eot'); /* IE9*/
   src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('../fonts/iconfont.woff') format('woff'), /* chrome, firefox */
@@ -8,37 +8,37 @@
 }
 
 
-.iconfont {
-  font-family:"iconfont" !important;
+.social-share-icon {
+  font-family:"socialshare" !important;
   font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-tencent:before { content: "\e607"; }
-.icon-qq:before { content: "\e601"; }
-.icon-weibo:before { content: "\e602"; }
-.icon-wechat:before { content: "\e603"; }
-.icon-douban:before { content: "\e604"; }
-.icon-heart:before { content: "\e605"; }
-.icon-like:before { content: "\e60a"; }
-.icon-qzone:before { content: "\e606"; }
-.icon-linkedin:before { content: "\e60d"; }
-.icon-diandian:before { content: "\e608"; }
-.icon-facebook:before { content: "\e609"; }
-.icon-google:before { content: "\e60b"; }
-.icon-twitter:before { content: "\e60c"; }
+.icon-tencent:before { content: "\f07a"; }
+.icon-qq:before { content: "\f11a"; }
+.icon-weibo:before { content: "\f12a"; }
+.icon-wechat:before { content: "\f09a"; }
+.icon-douban:before { content: "\f10a"; }
+.icon-heart:before { content: "\f20a"; }
+.icon-like:before { content: "\f00a"; }
+.icon-qzone:before { content: "\f08a"; }
+.icon-linkedin:before { content: "\f01a"; }
+.icon-diandian:before { content: "\f05a"; }
+.icon-facebook:before { content: "\f03a"; }
+.icon-google:before { content: "\f04a"; }
+.icon-twitter:before { content: "\f06a"; }
 
 .share-component {
   a {
     position:relative;
     text-decoration:none;
-    margin: 3px;
+    margin: 4px;
     display:inline-block;
   }
 
-  .iconfont {
+  .social-share-icon {
     position:relative;
     display:inline-block;
     width: 32px;
@@ -46,13 +46,14 @@
     font-size: 20px;
     border-radius: 50%;
     line-height: 32px;
-    border:1px solid #eee;
+    border:1px solid #666;
+    color: #666;
     text-align: center;
     vertical-align: middle;
     transition: background 0.6s ease-out 0s;
 
     &:hover{
-      background: #f4f4f4;
+      background: #666;
       color: #fff;
     }
   }
@@ -60,13 +61,13 @@
   .icon-weibo{
     color:#ff763b;border-color:#ff763b;
     &:hover{
-      background:#ff763b
+      background:#ff763b;
     }
   }
   .icon-tencent{
     color:#56b6e7;border-color:#56b6e7;
     &:hover{
-      background:#56b6e7
+      background:#56b6e7;
     }
   }
   .icon-qq{
