@@ -7,7 +7,7 @@
   url('../fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-.social-share-icon {
+.social-share {
   font-family:"socialshare" !important;
   font-size:16px;
   font-style:normal;
@@ -15,19 +15,19 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 
-  &.icon-tencent:before { content: "\f07a"; }
-  &.icon-qq:before { content: "\f11a"; }
-  &.icon-weibo:before { content: "\f12a"; }
-  &.icon-wechat:before { content: "\f09a"; }
-  &.icon-douban:before { content: "\f10a"; }
-  &.icon-heart:before { content: "\f20a"; }
-  &.icon-like:before { content: "\f00a"; }
-  &.icon-qzone:before { content: "\f08a"; }
-  &.icon-linkedin:before { content: "\f01a"; }
-  &.icon-diandian:before { content: "\f05a"; }
-  &.icon-facebook:before { content: "\f03a"; }
-  &.icon-google:before { content: "\f04a"; }
-  &.icon-twitter:before { content: "\f06a"; }
+  .icon-tencent:before { content: "\f07a"; }
+  .icon-qq:before { content: "\f11a"; }
+  .icon-weibo:before { content: "\f12a"; }
+  .icon-wechat:before { content: "\f09a"; }
+  .icon-douban:before { content: "\f10a"; }
+  .icon-heart:before { content: "\f20a"; }
+  .icon-like:before { content: "\f00a"; }
+  .icon-qzone:before { content: "\f08a"; }
+  .icon-linkedin:before { content: "\f01a"; }
+  .icon-diandian:before { content: "\f05a"; }
+  .icon-facebook:before { content: "\f03a"; }
+  .icon-google:before { content: "\f04a"; }
+  .icon-twitter:before { content: "\f06a"; }
 
   a {
     position:relative;
