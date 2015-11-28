@@ -103,6 +103,23 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 ```
 以上a标题会自动加上分享链接（`a` 标签必须带 `icon-NAME` 属性，不然分享链接不会自动加上）。
 
+### 如果你想在分享icon列表中内置一些元素，比如放一个收藏按钮在分享按钮的后面：
+
+```html
+<div class="share-component">
+    <a href="javascript:;" data-post-id="{{ $post->id }}" class="post-favorite-icon @if($post->favorited) favorited @endif">    <i class="glyphicon glyphicon-heart"></i>
+        <span class="favorite-count">{{ $post->favorite_count }}</span>
+    </a>
+</div>
+```
+这样并没有实现，因为结果是所有的分享按钮都创建在了收藏按钮的后面了，这时候你就可以用 `data-mode="prepend"` 来确定分享按钮创建的方式。
+
+```html
+<div class="share-component" data-mode="prepend>
+```
+
+这样，所有的分享图标就会创建在容器的内容前面，反之可以用 `append` 创建在容器内容后面，当然这是默认的，也不需要这么做。
+
 欢迎贡献代码及提建议！
 
 # License
