@@ -104,14 +104,14 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 
 ```html
 <div class="share-component">
-    <a href="javascript:;" class="iconfont iconfont-heart"></a>
+    <a href="javascript:;" class="iconfont icon-heart"></a>
 </div>
 ```
 这样并没有实现，因为结果是所有的分享按钮都创建在了收藏按钮的后面了，这时候你就可以用 `data-mode="prepend"` 来确定分享按钮创建的方式。
 
 ```html
 <div class="share-component" data-mode="prepend">
-    <a href="javascript:;" class="iconfont iconfont-heart"></a>
+    <a href="javascript:;" class="iconfont icon-heart"></a>
 </div>
 ```
 
