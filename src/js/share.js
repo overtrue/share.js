@@ -102,7 +102,7 @@
             var $wechat = $container.find('a.icon-wechat');
 
             $wechat.append('<div class="wechat-qrcode"><h4>'+$data.wechatQrcodeTitle+'</h4><div class="qrcode"></div><div class="help">'+$data.wechatQrcodeHelper+'</div></div>');
-            $wechat.find('.qrcode').qrcode({ size: 100, text: $data.url});
+            $wechat.find('.qrcode').qrcode({render: 'image', size: 100, text: $data.url});
         }
 
         /**
@@ -146,5 +146,5 @@
         }
     };
 
-    $('.share-component').share();
+    $('.share-component,.social-share').share();
 })(jQuery);

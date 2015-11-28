@@ -1,9 +1,10 @@
 [Share.js](http://overtrue.me/share.js/)
 ===
 
-一键分享到微博，QQ空间，QQ好友，微信，豆瓣，使用字体图标。
+一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
 
-![image](https://cloud.githubusercontent.com/assets/1472352/11419582/4c7ff370-9463-11e5-8b83-356940a2824e.png)
+![qq20151127-1 2x](https://cloud.githubusercontent.com/assets/1472352/11433126/05f8b0e0-94f4-11e5-9fca-74dc9d1b633f.png)
+
 
 [DEMO](http://overtrue.me/share.js/)
 
@@ -30,15 +31,11 @@ HTML:
 <div class="share-component"></div>
 
 <!-- share.css -->
-<link rel="stylesheet" href="dist/css/share.css">
-
-<!-- jQuery -->
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<link href="dist/css/share.min.css">
 
 <!-- share.js -->
-<script src="dist/js/jquery.qrcode.min.js"></script> <!-- for QRcode -->
-<script src="dist/js/share.js"></script>
-// 当你使用类名为 `share-component` 时不需要手动初始化
+<script src="dist/js/share.min.js"></script>
+// 当你使用类名为 `share-component` 或者 `social-share` 时不需要手动初始化
 ```
 
 ## 自定义配置
@@ -121,6 +118,10 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 这样，所有的分享图标就会创建在容器的内容前面，反之可以用 `append` 创建在容器内容后面，当然这是默认的，也不需要这么做。
 
 欢迎贡献代码及提建议！
+
+# 引用
+
+本项目中二维码生成部分用到了开源组件：[lrsjng/jquery-qrcode](https://github.com/lrsjng/jquery-qrcode) (MIT License)
 
 # License
 
