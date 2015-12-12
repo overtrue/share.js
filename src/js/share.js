@@ -75,7 +75,7 @@
          */
         function createIcons ($container, $data) {
             var $sites = getSites($data);
-console.log($sites);
+
             for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
                 var $url  = makeUrl($name, $data);
