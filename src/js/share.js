@@ -37,6 +37,7 @@
             image: $image ? $image : '',
             wechatQrcodeTitle: "微信扫一扫：分享",
             wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+            mobileSites: [],
             sites: ['weibo','qq','wechat','tencent','douban','qzone','linkedin','diandian','facebook','twitter','google'],
             disabled: [],
             initialized: false,
@@ -73,8 +74,8 @@
          * @param {Object}        $data
          */
         function createIcons ($container, $data) {
-            var $sites = getSites($data.sites, $data.disabled);
-
+            var $sites = getSites($data);
+console.log($sites);
             for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
                 var $url  = makeUrl($name, $data);
@@ -108,16 +109,26 @@
         /**
          * Get available site lists.
          *
-         * @param {Array|String} $sites
-         * @param {Array|String} $disabled
+         * @param {Array} $data
          *
          * @return {Array}
          */
-        function getSites ($sites, $disabled) {
+        function getSites ($data) {
+            if ($data['mobileSites'].length < 1) {
+                $data['mobileSites'] = $data['sites'];
+            };
+
+            var $sites = isMobileScreen() ? $data['mobileSites'] : $data['sites'];
+            var $disabled = $data['disabled'];
+
             if (typeof $sites == 'string') {$sites = $sites.split(',')};
             if (typeof $disabled == 'string') {$disabled = $disabled.split(',')};
 
-            return $sites.filter(function(v){ return !($disabled.indexOf(v) > -1) }).concat($disabled.filter(function(v){ return !($sites.indexOf(v) > -1)}));
+            if (runningInWeChat()) {
+                $disabled.push('wechat');
+            };
+
+            return $sites.filter(function(v){ return !($disabled.indexOf(v) > -1) });
         }
 
         /**
@@ -143,6 +154,26 @@
             }
 
             return $template;
+        }
+
+        /**
+         * Detect wechat browser.
+         *
+         * @return {Boolean}
+         */
+        function runningInWeChat() {
+            var ua = navigator.userAgent.toLowerCase();
+
+            return ua.match(/MicroMessenger/i) == "micromessenger";
+        }
+
+        /**
+         * Mobile screen width.
+         *
+         * @return {boolean}
+         */
+        function isMobileScreen () {
+            return $(window).width() <= 768;
         }
     };
 
