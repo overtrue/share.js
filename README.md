@@ -64,11 +64,7 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 ##### 禁用 google、twitter、facebook 并设置分享的描述
 
 ```html
-<<<<<<< HEAD
 <div class="share-component" data-disabled="google,twitter,facebook" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
-=======
-<div class="social-share" data-disabled="google" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
->>>>>>> 77e04bd778bbad9451c8af7caa0b5916ba2d102f
 ```
 
 ##### 设置微信二维码标题
@@ -113,24 +109,12 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 
 这样，所有的分享图标就会创建在容器的内容前面，反之可以用 `append` 创建在容器内容后面，当然这是默认的，也不需要这么做。
 
-<<<<<<< HEAD
 ### 指定移动设备上显示的图标
 
 ```html
 <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
 ```
 当在手机上打开该页面的时候就只会显示这4个图标了。
-=======
-当然，也可以手动通过 js 来初始化：
-
-```js
-var $config = {
-    //...
-   };
-
-$('.social-share').share($config);
-```
->>>>>>> 77e04bd778bbad9451c8af7caa0b5916ba2d102f
 
 欢迎贡献代码及提建议！
 
