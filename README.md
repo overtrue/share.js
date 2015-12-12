@@ -28,27 +28,19 @@ npm install social-share.js
 HTML:
 
 ```html
-<div class="share-component"></div>
+<div class="social-share"></div>
 
 <!-- share.css -->
 <link href="dist/css/share.min.css">
 
 <!-- share.js -->
 <script src="dist/js/share.min.js"></script>
-// 当你使用类名为 `share-component` 或者 `social-share` 时不需要手动初始化
+// 当你使用类名为 `social-share` 时不需要手动初始化
 ```
 
 ## 自定义配置
 
 所有配置**可选**， 通常默认就满足需求：
-
-```js
-var $config = {
-	//...
-   };
-
-$('.share-component').share($config);
-```
 
 可用的配置有：
 
@@ -72,19 +64,23 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 ##### 禁用 google、twitter、facebook 并设置分享的描述
 
 ```html
+<<<<<<< HEAD
 <div class="share-component" data-disabled="google,twitter,facebook" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
+=======
+<div class="social-share" data-disabled="google" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
+>>>>>>> 77e04bd778bbad9451c8af7caa0b5916ba2d102f
 ```
 
 ##### 设置微信二维码标题
 
 ```html
-<div class="share-component" data-wechat-qrcode-title="请打开微信扫一扫"></div>
+<div class="social-share" data-wechat-qrcode-title="请打开微信扫一扫"></div>
 ```
 
 ##### 针对特定站点使用不同的属性（title, url, description,image...）
 
 ```html
-<div class="share-component" data-weibo-title="这个标题只有的分享到微博时有用，其它标题为全局标题" data-qq-title="分享到QQ时用此标题"></div>
+<div class="social-share" data-weibo-title="这个标题只有的分享到微博时有用，其它标题为全局标题" data-qq-title="分享到QQ时用此标题"></div>
 ```
 
 ### 你也可以自定义图标
@@ -92,10 +88,10 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 使用: `data-initialized="true"` 标签或者 `initialized` 配置项来禁用自动生成icon功能。
 
 ```html
-<div class="share-component" data-initialized="true">
-    <a href="#" class="iconfont icon-weibo"></a>
-    <a href="#" class="iconfont icon-qq"></a>
-    <a href="#" class="iconfont icon-qzone"></a>
+<div class="social-share" data-initialized="true">
+    <a href="#" class="social-share-icon icon-weibo"></a>
+    <a href="#" class="social-share-icon icon-qq"></a>
+    <a href="#" class="social-share-icon icon-qzone"></a>
 </div>
 ```
 以上a标题会自动加上分享链接（`a` 标签必须带 `icon-NAME` 属性，不然分享链接不会自动加上）。
@@ -103,26 +99,38 @@ wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码�
 ### 如果你想在分享icon列表中内置一些元素，比如放一个收藏按钮在分享按钮的后面：
 
 ```html
-<div class="share-component">
-    <a href="javascript:;" class="iconfont icon-heart"></a>
+<div class="social-share">
+    <a href="javascript:;" class="social-share-icon icon-heart"></a>
 </div>
 ```
 这样并没有实现，因为结果是所有的分享按钮都创建在了收藏按钮的后面了，这时候你就可以用 `data-mode="prepend"` 来确定分享按钮创建的方式。
 
 ```html
-<div class="share-component" data-mode="prepend">
-    <a href="javascript:;" class="iconfont icon-heart"></a>
+<div class="social-share" data-mode="prepend">
+    <a href="javascript:;" class="social-share-icon icon-heart"></a>
 </div>
 ```
 
 这样，所有的分享图标就会创建在容器的内容前面，反之可以用 `append` 创建在容器内容后面，当然这是默认的，也不需要这么做。
 
+<<<<<<< HEAD
 ### 指定移动设备上显示的图标
 
 ```html
 <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
 ```
 当在手机上打开该页面的时候就只会显示这4个图标了。
+=======
+当然，也可以手动通过 js 来初始化：
+
+```js
+var $config = {
+    //...
+   };
+
+$('.social-share').share($config);
+```
+>>>>>>> 77e04bd778bbad9451c8af7caa0b5916ba2d102f
 
 欢迎贡献代码及提建议！
 

@@ -61,7 +61,7 @@
 
         this.each(function() {
             var $data      = $.extend({}, $globals, $(this).data() || {});
-            var $container = $(this).addClass('share-component');
+            var $container = $(this).addClass('share-component').addClass('social-share');
 
             createIcons($container, $data);
             createWechat($container, $data);
@@ -79,7 +79,7 @@
             for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
                 var $url  = makeUrl($name, $data);
-                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a href="javascript:;" class="iconfont icon-'+$name+'" target="_blank"></a>');
+                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a href="javascript:;" class="social-share-icon icon-'+$name+'" target="_blank"></a>');
 
                 if (!$link.length) {
                     continue;
