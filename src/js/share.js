@@ -20,12 +20,11 @@
     /**
      * Initialize a share bar.
      *
-     * @param {String|Object} $item    target container.
      * @param {Object}        $options globals (optional).
      *
      * @return {Void}
      */
-    $.fn.share = function ($item, $options) {
+    $.fn.share = function ($options) {
         var $image = $(document).find('img:first').prop('src');
 
         var $defaults = {
