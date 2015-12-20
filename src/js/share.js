@@ -74,6 +74,7 @@
          */
         function createIcons ($container, $data) {
             var $sites = getSites($data);
+            var $i;
 
             for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
@@ -140,6 +141,7 @@
          */
         function makeUrl ($name, $data) {
             var $template = $templates[$name];
+            var $key;
 
             $data['summary'] = $data['description'];
 
