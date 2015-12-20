@@ -20,12 +20,11 @@
     /**
      * Initialize a share bar.
      *
-     * @param {String|Object} $item    target container.
      * @param {Object}        $options globals (optional).
      *
      * @return {Void}
      */
-    $.fn.share = function ($item, $options) {
+    $.fn.share = function ($options) {
         var $image = $(document).find('img:first').prop('src');
 
         var $defaults = {
@@ -35,7 +34,7 @@
             title: $(document.head).find('[name="title"]').attr('content') || $(document.head).find('[name="Title"]').attr('content') || document.title,
             description: $(document.head).find('[name="description"]').attr('content') || $(document.head).find('[name="Description"]').attr('content'),
             image: $image ? $image : '',
-            wechatQrcodeTitle: "微信扫一扫：分享",
+            wechatQrcodeTitle: '微信扫一扫：分享',
             wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
             mobileSites: [],
             sites: ['weibo','qq','wechat','tencent','douban','qzone','linkedin','diandian','facebook','twitter','google'],
@@ -75,11 +74,12 @@
          */
         function createIcons ($container, $data) {
             var $sites = getSites($data);
+            var $i;
 
             for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
                 var $url  = makeUrl($name, $data);
-                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a href="javascript:;" class="social-share-icon icon-'+$name+'" target="_blank"></a>');
+                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'" target="_blank"></a>');
 
                 if (!$link.length) {
                     continue;
@@ -141,6 +141,7 @@
          */
         function makeUrl ($name, $data) {
             var $template = $templates[$name];
+            var $key;
 
             $data['summary'] = $data['description'];
 
@@ -164,7 +165,7 @@
         function runningInWeChat() {
             var ua = navigator.userAgent.toLowerCase();
 
-            return ua.match(/MicroMessenger/i) == "micromessenger";
+            return ua.match(/MicroMessenger/i) == 'micromessenger';
         }
 
         /**
