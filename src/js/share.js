@@ -176,5 +176,8 @@
         }
     };
 
-    $('.share-component,.social-share').share();
+    // Domready after initialization
+    $(function () {
+        $('.share-component,.social-share').share();
+    });
 })(jQuery);
