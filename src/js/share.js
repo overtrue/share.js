@@ -74,9 +74,8 @@
          */
         function createIcons ($container, $data) {
             var $sites = getSites($data);
-            var $i;
 
-            for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
+            for (var $i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
                 var $url  = makeUrl($name, $data);
                 var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'" target="_blank"></a>');
@@ -141,11 +140,10 @@
          */
         function makeUrl ($name, $data) {
             var $template = $templates[$name];
-            var $key;
 
             $data['summary'] = $data['description'];
 
-            for($key in $data){
+            for (var $key in $data) {
                 var $camelCaseKey = $name + $key.replace(/^[a-z]/, function($str){
                     return $str.toUpperCase();
                 });
