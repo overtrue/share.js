@@ -42,8 +42,10 @@
             initialized: false,
         };
 
-        var $globals = $.extend(true, $defaults, $options);
-
+        var $globals = $defaults;
+        for(attr in $options){
+            $globals[attr] = $options[attr];
+        }
         var $templates = {
             qzone       : 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{URL}}&title={{TITLE}}&desc={{DESCRIPTION}}&summary={{SUMMARY}}&site={{SOURCE}}',
             qq          : 'http://connect.qq.com/widget/shareqq/index.html?url={{URL}}&title={{TITLE}}&source={{SOURCE}}&desc={{DESCRIPTION}}',
