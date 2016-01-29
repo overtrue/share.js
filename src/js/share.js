@@ -43,7 +43,7 @@
         };
 
         var $globals = $defaults;
-        for(attr in $options){
+        for(var attr in $options){
             $globals[attr] = $options[attr];
         }
         var $templates = {
