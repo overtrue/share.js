@@ -26,20 +26,21 @@
      */
     $.fn.share = function ($options) {
         var $image = $(document).find('img:first').prop('src');
+        var $head = $(document.head);
 
         var $defaults = {
-            url: window.location.href,
-            site_url: window.location.origin,
-            source: $(document.head).find('[name="site"]').attr('content') || $(document.head).find('[name="Site"]').attr('content') || document.title,
-            title: $(document.head).find('[name="title"]').attr('content') || $(document.head).find('[name="Title"]').attr('content') || document.title,
-            description: $(document.head).find('[name="description"]').attr('content') || $(document.head).find('[name="Description"]').attr('content'),
+            url: location.href,
+            site_url: location.origin,
+            source: $head.find('[name="site"]').attr('content') || $head.find('[name="Site"]').attr('content') || document.title,
+            title: $head.find('[name="title"]').attr('content') || $head.find('[name="Title"]').attr('content') || document.title,
+            description: $head.find('[name="description"]').attr('content') || $head.find('[name="Description"]').attr('content'),
             image: $image ? $image : '',
             wechatQrcodeTitle: '微信扫一扫：分享',
             wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
             mobileSites: [],
             sites: ['weibo','qq','wechat','tencent','douban','qzone','linkedin','diandian','facebook','twitter','google'],
             disabled: [],
-            initialized: false,
+            initialized: false
         };
 
         var $globals = $defaults;
@@ -57,12 +58,12 @@
             linkedin    : 'http://www.linkedin.com/shareArticle?mini=true&ro=true&title={{TITLE}}&url={{URL}}&summary={{SUMMARY}}&source={{SOURCE}}&armin=armin',
             facebook    : 'https://www.facebook.com/sharer/sharer.php?u={{URL}}',
             twitter     : 'https://twitter.com/intent/tweet?text={{TITLE}}&url={{URL}}&via={{SITE_URL}}',
-            google      : 'https://plus.google.com/share?url={{URL}}',
+            google      : 'https://plus.google.com/share?url={{URL}}'
         };
 
         this.each(function() {
             var $data      = $.extend({}, $globals, $(this).data() || {});
-            var $container = $(this).addClass('share-component').addClass('social-share');
+            var $container = $(this).addClass('share-component social-share');
 
             createIcons($container, $data);
             createWechat($container, $data);
@@ -163,9 +164,7 @@
          * @return {Boolean}
          */
         function runningInWeChat() {
-            var ua = navigator.userAgent.toLowerCase();
-
-            return ua.match(/MicroMessenger/i) == 'micromessenger';
+            return /MicroMessenger/i.test(navigator.userAgent);
         }
 
         /**
