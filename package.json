@@ -1,7 +1,7 @@
 {
   "name": "social-share.js",
   "description": "create social share buttons on your site.",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "main": "dist/js/share.min.js",
   "dependencies": {},
   "scripts": {

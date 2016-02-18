@@ -26,24 +26,27 @@
      */
     $.fn.share = function ($options) {
         var $image = $(document).find('img:first').prop('src');
+        var $head = $(document.head);
 
         var $defaults = {
-            url: window.location.href,
-            site_url: window.location.origin,
-            source: $(document.head).find('[name="site"]').attr('content') || $(document.head).find('[name="Site"]').attr('content') || document.title,
-            title: $(document.head).find('[name="title"]').attr('content') || $(document.head).find('[name="Title"]').attr('content') || document.title,
-            description: $(document.head).find('[name="description"]').attr('content') || $(document.head).find('[name="Description"]').attr('content'),
+            url: location.href,
+            site_url: location.origin,
+            source: $head.find('[name="site"]').attr('content') || $head.find('[name="Site"]').attr('content') || document.title,
+            title: $head.find('[name="title"]').attr('content') || $head.find('[name="Title"]').attr('content') || document.title,
+            description: $head.find('[name="description"]').attr('content') || $head.find('[name="Description"]').attr('content'),
             image: $image ? $image : '',
             wechatQrcodeTitle: '微信扫一扫：分享',
             wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
             mobileSites: [],
             sites: ['weibo','qq','wechat','tencent','douban','qzone','linkedin','diandian','facebook','twitter','google'],
             disabled: [],
-            initialized: false,
+            initialized: false
         };
 
-        var $globals = $.extend(true, $defaults, $options);
-
+        var $globals = $defaults;
+        for(var attr in $options){
+            $globals[attr] = $options[attr];
+        }
         var $templates = {
             qzone       : 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{URL}}&title={{TITLE}}&desc={{DESCRIPTION}}&summary={{SUMMARY}}&site={{SOURCE}}',
             qq          : 'http://connect.qq.com/widget/shareqq/index.html?url={{URL}}&title={{TITLE}}&source={{SOURCE}}&desc={{DESCRIPTION}}',
@@ -55,12 +58,12 @@
             linkedin    : 'http://www.linkedin.com/shareArticle?mini=true&ro=true&title={{TITLE}}&url={{URL}}&summary={{SUMMARY}}&source={{SOURCE}}&armin=armin',
             facebook    : 'https://www.facebook.com/sharer/sharer.php?u={{URL}}',
             twitter     : 'https://twitter.com/intent/tweet?text={{TITLE}}&url={{URL}}&via={{SITE_URL}}',
-            google      : 'https://plus.google.com/share?url={{URL}}',
+            google      : 'https://plus.google.com/share?url={{URL}}'
         };
 
         this.each(function() {
             var $data      = $.extend({}, $globals, $(this).data() || {});
-            var $container = $(this).addClass('share-component').addClass('social-share');
+            var $container = $(this).addClass('share-component social-share');
 
             createIcons($container, $data);
             createWechat($container, $data);
@@ -74,9 +77,8 @@
          */
         function createIcons ($container, $data) {
             var $sites = getSites($data);
-            var $i;
 
-            for ($i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
+            for (var $i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
                 var $name = $sites[$i];
                 var $url  = makeUrl($name, $data);
                 var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'" target="_blank"></a>');
@@ -141,11 +143,10 @@
          */
         function makeUrl ($name, $data) {
             var $template = $templates[$name];
-            var $key;
 
             $data['summary'] = $data['description'];
 
-            for($key in $data){
+            for (var $key in $data) {
                 var $camelCaseKey = $name + $key.replace(/^[a-z]/, function($str){
                     return $str.toUpperCase();
                 });
@@ -163,9 +164,7 @@
          * @return {Boolean}
          */
         function runningInWeChat() {
-            var ua = navigator.userAgent.toLowerCase();
-
-            return ua.match(/MicroMessenger/i) == 'micromessenger';
+            return /MicroMessenger/i.test(navigator.userAgent);
         }
 
         /**
@@ -178,5 +177,8 @@
         }
     };
 
-    $('.share-component,.social-share').share();
+    // Domready after initialization
+    $(function () {
+        $('.share-component,.social-share').share();
+    });
 })(jQuery);
