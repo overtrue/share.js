@@ -25,28 +25,27 @@
      * @return {Void}
      */
     $.fn.share = function ($options) {
-        var $image = $(document).find('img:first').prop('src');
         var $head = $(document.head);
 
         var $defaults = {
             url: location.href,
             site_url: location.origin,
-            source: $head.find('[name="site"]').attr('content') || $head.find('[name="Site"]').attr('content') || document.title,
-            title: $head.find('[name="title"]').attr('content') || $head.find('[name="Title"]').attr('content') || document.title,
-            description: $head.find('[name="description"]').attr('content') || $head.find('[name="Description"]').attr('content'),
-            image: $image ? $image : '',
+            source: $head.find('[name=site], [name=Site]').attr('content') || document.title,
+            title: $head.find('[name=title], [name=Title]').attr('content') || document.title,
+            description: $head.find('[name=description], [name=Description]').attr('content') || '',
+            image: $('img:first').prop('src') || '',
+
             wechatQrcodeTitle: '微信扫一扫：分享',
             wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+
             mobileSites: [],
             sites: ['weibo','qq','wechat','tencent','douban','qzone','linkedin','diandian','facebook','twitter','google'],
             disabled: [],
             initialized: false
         };
 
-        var $globals = $defaults;
-        for(var attr in $options){
-            $globals[attr] = $options[attr];
-        }
+        var $globals = $.extend({}, $defaults, $options);
+
         var $templates = {
             qzone       : 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{URL}}&title={{TITLE}}&desc={{DESCRIPTION}}&summary={{SUMMARY}}&site={{SOURCE}}',
             qq          : 'http://connect.qq.com/widget/shareqq/index.html?url={{URL}}&title={{TITLE}}&source={{SOURCE}}&desc={{DESCRIPTION}}',
@@ -62,7 +61,7 @@
         };
 
         this.each(function() {
-            var $data      = $.extend({}, $globals, $(this).data() || {});
+            var $data      = $.extend({}, $globals, $(this).data());
             var $container = $(this).addClass('share-component social-share');
 
             createIcons($container, $data);
@@ -78,21 +77,20 @@
         function createIcons ($container, $data) {
             var $sites = getSites($data);
 
-            for (var $i in $data.mode == 'prepend' ? $sites.reverse() : $sites) {
-                var $name = $sites[$i];
+            $.each($data.mode == 'prepend' ? $sites.reverse() : $sites, function (i, $name) {
                 var $url  = makeUrl($name, $data);
                 var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'" target="_blank"></a>');
 
                 if (!$link.length) {
-                    continue;
-                };
+                    return true;
+                }
 
-                $link.attr('href', $url);
+                $link.prop('href', $url);
 
                 if (!$data.initialized) {
                     $data.mode == 'prepend' ? $container.prepend($link) : $container.append($link);
                 }
-            }
+            });
         }
 
         /**
@@ -116,21 +114,26 @@
          * @return {Array}
          */
         function getSites ($data) {
-            if ($data['mobileSites'].length < 1) {
+            if ($data['mobileSites'].length === 0) {
                 $data['mobileSites'] = $data['sites'];
             };
 
             var $sites = isMobileScreen() ? $data['mobileSites'] : $data['sites'];
             var $disabled = $data['disabled'];
 
-            if (typeof $sites == 'string') {$sites = $sites.split(',')};
-            if (typeof $disabled == 'string') {$disabled = $disabled.split(',')};
+            if (typeof $sites == 'string') { $sites = $sites.split(/\s*,\s*/); }
+            if (typeof $disabled == 'string') { $disabled = $disabled.split(/\s*,\s*/); }
 
             if (runningInWeChat()) {
                 $disabled.push('wechat');
-            };
+            }
 
-            return $sites.filter(function(v){ return !($disabled.indexOf(v) > -1) });
+            // Remove elements
+            $disabled.length && $.each($disabled, function (i, el) {
+                $sites.splice($.inArray(el, $sites), 1);
+            });
+            
+            return $sites;
         }
 
         /**
@@ -147,12 +150,14 @@
             $data['summary'] = $data['description'];
 
             for (var $key in $data) {
-                var $camelCaseKey = $name + $key.replace(/^[a-z]/, function($str){
-                    return $str.toUpperCase();
-                });
+                if ($data.hasOwnProperty($key)) {
+                    var $camelCaseKey = $name + $key.replace(/^[a-z]/, function($str){
+                        return $str.toUpperCase();
+                    });
 
-                var $value = encodeURIComponent($data[$camelCaseKey] || $data[$key]);
-                $template = $template.replace(new RegExp('{{'+$key.toUpperCase()+'}}', 'g'), $value);
+                    var $value = encodeURIComponent($data[$camelCaseKey] || $data[$key]);
+                    $template = $template.replace(new RegExp('{{'+$key.toUpperCase()+'}}', 'g'), $value);
+                }
             }
 
             return $template;
