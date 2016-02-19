@@ -12,15 +12,20 @@
 
 # 安装
 
-有两种安装方式：
+有3种安装方式：
 
 1. 使用 [npm](https://npmjs.com)
 
 ```shell
 npm install social-share.js
 ```
+2. 使用 [cdnjs](https://cdnjs.com/libraries/social-share.js)，引入 `share.min.css` 与 `share.min.js` 两个链接就好。 (感谢 @mdluo)
 
-2. 手动下载或者 git clone 本项目。
+```html
+https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.10/js/share.min.js
+```
+
+3. 手动下载或者 git clone 本项目。
 
 # 使用
 
@@ -30,11 +35,10 @@ HTML:
 ```html
 <div class="social-share"></div>
 
-<!-- share.css -->
+<!--  css & js -->
 <link href="dist/css/share.min.css">
-
-<!-- share.js -->
 <script src="dist/js/share.min.js"></script>
+
 // 当你使用类名为 `social-share` 时不需要手动初始化
 ```
 
