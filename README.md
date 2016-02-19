@@ -16,14 +16,14 @@
 
 1. 使用 [npm](https://npmjs.com)
 
-```shell
-npm install social-share.js
-```
+    ```shell
+    npm install social-share.js
+    ```
 2. 使用 [cdnjs](https://cdnjs.com/libraries/social-share.js)，引入 `share.min.css` 与 `share.min.js` 两个链接就好。 (感谢 @mdluo)
 
-```html
-https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.10/js/share.min.js
-```
+    ```html
+    https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.10/js/share.min.js
+    ```
 
 3. 手动下载或者 git clone 本项目。
 
