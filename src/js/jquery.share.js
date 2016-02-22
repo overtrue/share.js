@@ -61,11 +61,17 @@
         };
 
         this.each(function() {
+            if ($(this).data('initialized')) {
+                return true;
+            }
+
             var $data      = $.extend({}, $globals, $(this).data());
             var $container = $(this).addClass('share-component social-share');
 
             createIcons($container, $data);
             createWechat($container, $data);
+
+            $(this).data('initialized', true);
         });
 
         /**
@@ -118,7 +124,7 @@
                 $data['mobileSites'] = $data['sites'];
             };
 
-            var $sites = isMobileScreen() ? $data['mobileSites'] : $data['sites'];
+            var $sites = (isMobileScreen() ? $data['mobileSites'] : $data['sites']).slice(0);
             var $disabled = $data['disabled'];
 
             if (typeof $sites == 'string') { $sites = $sites.split(/\s*,\s*/); }

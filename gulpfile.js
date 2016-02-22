@@ -19,18 +19,16 @@ var paths = {
 };
 
 var appFiles = {
-  styles: [ paths.styles.src + '**/*.scss' ],
-  scripts: [ paths.scripts.src + '**/*.js' ],
-  fonts: [ paths.fonts.src + '**/*' ]
+  styles: [paths.styles.src + '**/*.scss'],
+  jqueryShare: [paths.scripts.src + 'jquery.qrcode.min.js', paths.scripts.src + 'jquery.share.js'],
+  socialShare: [paths.scripts.src + 'qrcode.js', paths.scripts.src + 'social-share.js'],
+  fonts: [paths.fonts.src + '**/*']
 };
 
 var vendorFiles = {
-  styles: [
-  ],
-  scripts: [
-  ],
-  fonts: [
-  ]
+  styles: [],
+  scripts: [],
+  fonts: []
 };
 
 /*
@@ -89,9 +87,19 @@ gulp.task('css', function(){
     .pipe(gulp.dest(paths.styles.dest));
 });
 
-gulp.task('scripts', function(){
-  return gulp.src(appFiles.scripts)
-    .pipe(concat('share.js'))
+gulp.task('jquery.share.js', function () {
+  return gulp.src(appFiles.jqueryShare)
+    .pipe(concat('jquery.share.js'))
+    .pipe(isProduction ? plugins.uglify() : gutil.noop())
+    .pipe(plugins.size())
+    .pipe(plugins.notify())
+    .pipe(plugins.rename({suffix: '.min'}))
+    .pipe(gulp.dest(paths.scripts.dest));
+});
+
+gulp.task('share.js', function () {
+  return gulp.src(appFiles.socialShare)
+    .pipe(concat('social-share.js'))
     .pipe(isProduction ? plugins.uglify() : gutil.noop())
     .pipe(plugins.size())
     .pipe(plugins.notify())
@@ -105,14 +113,14 @@ gulp.task('fonts', function(){
 });
 
 
-gulp.task('watch', ['css', 'scripts', 'fonts'], function(){
-  gulp.watch(appFiles.styles, ['css']).on('change', function(evt) {
+gulp.task('watch', ['css', 'jquery.share.js', 'share.js', 'fonts'], function () {
+  gulp.watch(appFiles.styles, ['css']).on('change', function (evt) {
     changeEvent(evt);
   });
 
-  gulp.watch(paths.scripts.src + '*.js', ['scripts']).on('change', function(evt) {
+  gulp.watch(paths.scripts.src + '*.js', ['jquery.share.js', 'share.js']).on('change', function (evt) {
     changeEvent(evt);
   });
 });
 
-gulp.task('default', ['css', 'scripts', 'fonts']);
+gulp.task('default', ['css', 'jquery.share.js', 'share.js', 'fonts']);
