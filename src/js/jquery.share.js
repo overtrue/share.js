@@ -138,7 +138,10 @@
 
             // Remove elements
             $disabled.length && $.each($disabled, function (i, el) {
-                $sites.splice($.inArray(el, $sites), 1);
+                var removeItemIndex = $.inArray(el, $sites);
+                if (removeItemIndex !== -1) {
+                    $sites.splice(removeItemIndex, 1);
+                }                
             });
             
             return $sites;
