@@ -85,7 +85,11 @@
         function createIcons ($container, $data) {
             var $sites = getSites($data);
 
-            $.each($data.mode == 'prepend' ? $sites.reverse() : $sites, function (i, $name) {
+            $data.mode == 'prepend' ? $sites.reverse() : $sites
+
+            if (!$sites.length) {return;}
+
+            $.each($sites, function (i, $name) {
                 var $url  = makeUrl($name, $data);
                 var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'" target="_blank"></a>');
 
@@ -110,8 +114,15 @@
         function createWechat ($container, $data) {
             var $wechat = $container.find('a.icon-wechat');
 
+            if (!$wechat.length) {return;}
+
             $wechat.append('<div class="wechat-qrcode"><h4>'+$data.wechatQrcodeTitle+'</h4><div class="qrcode"></div><div class="help">'+$data.wechatQrcodeHelper+'</div></div>');
+
             $wechat.find('.qrcode').qrcode({render: 'image', size: 100, text: $data.url});
+
+            if ($wechat.offset().top < 100) {
+                $wechat.find('.wechat-qrcode').addClass('bottom');
+            }
         }
 
         /**
@@ -122,11 +133,11 @@
          * @return {Array}
          */
         function getSites ($data) {
-            if ($data['mobileSites'].length === 0) {
+            if ($data['mobileSites'].length === 0 && $data['sites'].length) {
                 $data['mobileSites'] = $data['sites'];
             };
 
-            var $sites = (isMobileScreen() ? $data['mobileSites'] : $data['sites']).slice(0);
+            var $sites = (isMobileScreen() ? $data['mobileSites'] : ($data['sites'].length ? $data['sites']: [])).slice(0);
             var $disabled = $data['disabled'];
 
             if (typeof $sites == 'string') { $sites = $sites.split(/\s*,\s*/); }
@@ -135,7 +146,6 @@
             if (runningInWeChat()) {
                 $disabled.push('wechat');
             }
-
             // Remove elements
             $disabled.length && $.each($disabled, function (i, el) {
                 var removeItemIndex = $.inArray(el, $sites);
@@ -143,7 +153,7 @@
                     $sites.splice(removeItemIndex, 1);
                 }                
             });
-            
+
             return $sites;
         }
 
@@ -157,7 +167,6 @@
          */
         function makeUrl ($name, $data) {
             var $template = $templates[$name];
-
             $data['summary'] = $data['description'];
 
             for (var $key in $data) {
