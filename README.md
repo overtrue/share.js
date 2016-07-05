@@ -19,9 +19,15 @@
     ```shell
     npm install social-share.js
     ```
-2. 使用 [cdnjs](https://cdnjs.com/libraries/social-share.js)，引入 `share.min.css` 与 `share.min.js` 两个链接就好。 (感谢 [@mdluo](https://github.com/mdluo))
+2. 使用 [bower](https://bower.io)
 
-3. 手动下载或者 git clone 本项目。
+    ```shell
+    bower install social-share.js
+    ```
+
+3. 使用 [cdnjs](https://cdnjs.com/libraries/social-share.js)，引入 `share.min.css` 与 `share.min.js` 两个链接就好。 (感谢 [@mdluo](https://github.com/mdluo))
+
+4. 手动下载或者 git clone 本项目。
 
 # 使用
 
