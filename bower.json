@@ -1,0 +1,28 @@
+{
+  "name": "social-share.js",
+  "description": "create social share buttons on your site.",
+  "main": "dist/js/share.min.js",
+  "authors": [
+    "overtrue"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sns",
+    "share",
+    "weibo",
+    "qq",
+    "douban",
+    "qzone",
+    "linkedin",
+    "facebook",
+    "google"
+  ],
+  "homepage": "https://github.com/overtrue/share.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
