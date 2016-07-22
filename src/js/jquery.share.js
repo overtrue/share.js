@@ -92,13 +92,17 @@
 
             $.each($sites, function (i, $name) {
                 var $url  = makeUrl($name, $data);
-                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'" target="_blank"></a>');
+                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'"></a>');
 
                 if (!$link.length) {
                     return true;
                 }
 
                 $link.prop('href', $url);
+
+                if ($url != 'javascript:;') {
+                    $link.prop('target', '_blank');
+                }
 
                 if (!$data.initialized) {
                     $data.mode == 'prepend' ? $container.prepend($link) : $container.append($link);

@@ -122,13 +122,17 @@
 
         each(isPrepend ? sites.reverse() : sites, function (name) {
             var url = makeUrl(name, data);
-            var link = data.initialized ? getElementsByClassName(elem, '.icon-' + name) : createElementByString('<a class="social-share-icon icon-' + name + '" target="_blank"></a>');
+            var link = data.initialized ? getElementsByClassName(elem, '.icon-' + name) : createElementByString('<a class="social-share-icon icon-' + name + '"></a>');
 
             if (!link.length) {
                 return true;
             }
 
             link[0].href = url;
+
+            if (url != 'javascript:') {
+                link[0].target = '_blank';
+            }
 
             if (!data.initialized) {
                 isPrepend ? elem.insertBefore(link[0], elem.firstChild) : elem.appendChild(link[0]);
