@@ -176,7 +176,7 @@
                         return $str.toUpperCase();
                     });
 
-                    var $value = encodeURIComponent($data[$camelCaseKey] || $data[$key]);
+                    var $value = encodeURIComponent($data[$camelCaseKey] === undefined ? $data[$key] : $data[$camelCaseKey]);
                     $template = $template.replace(new RegExp('{{'+$key.toUpperCase()+'}}', 'g'), $value);
                 }
             }

@@ -208,7 +208,7 @@
             var nameKey = name + fix + key.toLowerCase();
             key = (fix + key).toLowerCase();
 
-            return encodeURIComponent(data[nameKey] || data[key] || '');
+            return encodeURIComponent((data[nameKey] === undefined ? data[key] : data[nameKey]) || '');
         });
     }
 
