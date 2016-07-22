@@ -1,7 +1,7 @@
 {
   "name": "social-share.js",
   "description": "create social share buttons on your site.",
-  "main": "dist/js/share.min.js",
+  "main": "src/js/jquery.share.js",
   "authors": [
     "overtrue"
   ],
@@ -23,6 +23,7 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "demo"
   ]
 }
