@@ -38,6 +38,7 @@
         title: title,
         description: description,
         image: image,
+        imageSelector: undefined,
 
         weiboKey: '',
 
@@ -101,6 +102,12 @@
      */
     function share(elem, options) {
         var data = mixin({}, defaults, options || {}, dataset(elem));
+
+        if (data.imageSelector) {
+            data.image = querySelectorAlls(data.imageSelector).map(function(item) {
+                return item.src;
+            }).join('||');
+        }
 
         addClass(elem, 'share-component social-share');
         createIcons(elem, data);

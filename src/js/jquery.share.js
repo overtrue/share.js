@@ -34,6 +34,7 @@
             title: $head.find('[name=title], [name=Title]').attr('content') || document.title,
             description: $head.find('[name=description], [name=Description]').attr('content') || '',
             image: $('img:first').prop('src') || '',
+            imageSelector: undefined,
 
             weiboKey: '',
 
@@ -69,6 +70,11 @@
             }
 
             var $data      = $.extend({}, $globals, $(this).data());
+            if ($data.imageSelector) {
+                $data.image = $($data.imageSelector).map(function() {
+                    return $(this).prop('src');
+                }).get().join('||');
+            }
             var $container = $(this).addClass('share-component social-share');
 
             createIcons($container, $data);
