@@ -43,6 +43,7 @@
 
         wechatQrcodeTitle: '微信扫一扫：分享',
         wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+        wechatQrcodeSize: 100,
 
         sites: ['weibo', 'qq', 'wechat', 'tencent', 'douban', 'qzone', 'linkedin', 'diandian', 'facebook', 'twitter', 'google'],
         mobileSites: [],
@@ -67,7 +68,7 @@
 
     /**
      * Expose API to the global
-     * 
+     *
      * @param  {String|Element} elem
      * @param  {Object} options
      */
@@ -153,7 +154,7 @@
         var qrcode = getElementsByClassName(elems[0], 'qrcode', 'div');
 
         wechat[0].appendChild(elems[0]);
-        new QRCode(qrcode[0], {text: data.url, width: 100, height: 100});
+        new QRCode(qrcode[0], {text: data.url, width: data.wechatQrcodeSize, height: data.wechatQrcodeSize});
     }
 
 
@@ -228,7 +229,7 @@
      * Simple selector.
      *
      * @param {String} str #ID or .CLASS
-     * 
+     *
      * @returns {Array}
      */
     function selector(str) {
