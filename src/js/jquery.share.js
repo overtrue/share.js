@@ -100,7 +100,9 @@
 
                 $link.prop('href', $url);
 
-                if ($url != 'javascript:;') {
+                if ($name === 'wechat') {
+                    $link.prop('tabindex', -1);
+                } else {
                     $link.prop('target', '_blank');
                 }
 

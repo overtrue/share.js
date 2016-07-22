@@ -130,7 +130,9 @@
 
             link[0].href = url;
 
-            if (url != 'javascript:') {
+            if (name === 'wechat') {
+                link[0].tabindex = -1;
+            } else {
                 link[0].target = '_blank';
             }
 
