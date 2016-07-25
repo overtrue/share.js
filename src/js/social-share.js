@@ -38,11 +38,13 @@
         title: title,
         description: description,
         image: image,
+        imageSelector: undefined,
 
         weiboKey: '',
 
         wechatQrcodeTitle: '微信扫一扫：分享',
         wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+        wechatQrcodeSize: 100,
 
         sites: ['weibo', 'qq', 'wechat', 'tencent', 'douban', 'qzone', 'linkedin', 'diandian', 'facebook', 'twitter', 'google'],
         mobileSites: [],
@@ -67,7 +69,7 @@
 
     /**
      * Expose API to the global
-     * 
+     *
      * @param  {String|Element} elem
      * @param  {Object} options
      */
@@ -101,6 +103,12 @@
     function share(elem, options) {
         var data = mixin({}, defaults, options || {}, dataset(elem));
 
+        if (data.imageSelector) {
+            data.image = querySelectorAlls(data.imageSelector).map(function(item) {
+                return item.src;
+            }).join('||');
+        }
+
         addClass(elem, 'share-component social-share');
         createIcons(elem, data);
         createWechat(elem, data);
@@ -121,13 +129,19 @@
 
         each(isPrepend ? sites.reverse() : sites, function (name) {
             var url = makeUrl(name, data);
-            var link = data.initialized ? getElementsByClassName(elem, '.icon-' + name) : createElementByString('<a class="social-share-icon icon-' + name + '" target="_blank"></a>');
+            var link = data.initialized ? getElementsByClassName(elem, '.icon-' + name) : createElementByString('<a class="social-share-icon icon-' + name + '"></a>');
 
             if (!link.length) {
                 return true;
             }
 
             link[0].href = url;
+
+            if (name === 'wechat') {
+                link[0].tabindex = -1;
+            } else {
+                link[0].target = '_blank';
+            }
 
             if (!data.initialized) {
                 isPrepend ? elem.insertBefore(link[0], elem.firstChild) : elem.appendChild(link[0]);
@@ -153,7 +167,7 @@
         var qrcode = getElementsByClassName(elems[0], 'qrcode', 'div');
 
         wechat[0].appendChild(elems[0]);
-        new QRCode(qrcode[0], {text: data.url, width: 100, height: 100});
+        new QRCode(qrcode[0], {text: data.url, width: data.wechatQrcodeSize, height: data.wechatQrcodeSize});
     }
 
 
@@ -207,7 +221,7 @@
             var nameKey = name + fix + key.toLowerCase();
             key = (fix + key).toLowerCase();
 
-            return encodeURIComponent(data[nameKey] || data[key] || '');
+            return encodeURIComponent((data[nameKey] === undefined ? data[key] : data[nameKey]) || '');
         });
     }
 
@@ -228,7 +242,7 @@
      * Simple selector.
      *
      * @param {String} str #ID or .CLASS
-     * 
+     *
      * @returns {Array}
      */
     function selector(str) {
