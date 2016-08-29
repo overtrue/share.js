@@ -38,7 +38,7 @@ HTML:
 <div class="social-share"></div>
 
 <!--  css & js -->
-<link href="dist/css/share.min.css">
+<link rel="stylesheet" href="dist/css/share.min.css">
 <script src="dist/js/share.min.js"></script>
 
 // 当你使用类名为 `social-share` 时不需要手动初始化
