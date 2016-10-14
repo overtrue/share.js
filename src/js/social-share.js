@@ -129,7 +129,7 @@
 
         each(isPrepend ? sites.reverse() : sites, function (name) {
             var url = makeUrl(name, data);
-            var link = data.initialized ? getElementsByClassName(elem, '.icon-' + name) : createElementByString('<a class="social-share-icon icon-' + name + '"></a>');
+            var link = data.initialized ? getElementsByClassName(elem, 'icon-' + name) : createElementByString('<a class="social-share-icon icon-' + name + '"></a>');
 
             if (!link.length) {
                 return true;
