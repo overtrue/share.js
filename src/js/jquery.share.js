@@ -34,11 +34,13 @@
             title: $head.find('[name=title], [name=Title]').attr('content') || document.title,
             description: $head.find('[name=description], [name=Description]').attr('content') || '',
             image: $('img:first').prop('src') || '',
+            imageSelector: undefined,
 
             weiboKey: '',
 
             wechatQrcodeTitle: '微信扫一扫：分享',
             wechatQrcodeHelper: '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+            wechatQrcodeSize: 100,
 
             mobileSites: [],
             sites: ['weibo','qq','wechat','tencent','douban','qzone','linkedin','diandian','facebook','twitter','google'],
@@ -50,7 +52,7 @@
 
         var $templates = {
             qzone       : 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{URL}}&title={{TITLE}}&desc={{DESCRIPTION}}&summary={{SUMMARY}}&site={{SOURCE}}',
-            qq: 'http://connect.qq.com/widget/shareqq/index.html?url={{URL}}&title={{TITLE}}&source={{SOURCE}}&desc={{DESCRIPTION}}&pics={{IMAGE}}',
+            qq          : 'http://connect.qq.com/widget/shareqq/index.html?url={{URL}}&title={{TITLE}}&source={{SOURCE}}&desc={{DESCRIPTION}}&pics={{IMAGE}}',
             tencent     : 'http://share.v.t.qq.com/index.php?c=share&a=index&title={{TITLE}}&url={{URL}}&pic={{IMAGE}}',
             weibo       : 'http://service.weibo.com/share/share.php?url={{URL}}&title={{TITLE}}&pic={{IMAGE}}&appkey={{WEIBOKEY}}',
             wechat      : 'javascript:;',
@@ -82,6 +84,11 @@
             }
 
             var $data      = $.extend({}, $globals, $(this).data());
+            if ($data.imageSelector) {
+                $data.image = $($data.imageSelector).map(function() {
+                    return $(this).prop('src');
+                }).get().join('||');
+            }
             var $container = $(this).addClass('share-component social-share');
 
             createIcons($container, $data);
@@ -105,7 +112,7 @@
 
             $.each($sites, function (i, $name) {
                 var $url  = makeUrl($name, $data);
-                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'" target="_blank"></a>');
+                var $link = $data.initialized ? $container.find('.icon-'+$name) : $('<a class="social-share-icon icon-'+$name+'"></a>');
 
                 if (!$link.length) {
                     return true;
@@ -113,6 +120,12 @@
                 $link.prop('aria-label', "分享到 "+$ariaLabels[$name]);
 
                 $link.prop('href', $url);
+
+                if ($name === 'wechat') {
+                    $link.prop('tabindex', -1);
+                } else {
+                    $link.prop('target', '_blank');
+                }
 
                 if (!$data.initialized) {
                     $data.mode == 'prepend' ? $container.prepend($link) : $container.append($link);
@@ -133,7 +146,7 @@
 
             $wechat.append('<div class="wechat-qrcode"><h4>'+$data.wechatQrcodeTitle+'</h4><div class="qrcode"></div><div class="help">'+$data.wechatQrcodeHelper+'</div></div>');
 
-            $wechat.find('.qrcode').qrcode({render: 'image', size: 100, text: $data.url});
+            $wechat.find('.qrcode').qrcode({render: 'image', size: $data.wechatQrcodeSize, text: $data.url});
 
             if ($wechat.offset().top < 100) {
                 $wechat.find('.wechat-qrcode').addClass('bottom');
@@ -190,7 +203,7 @@
                         return $str.toUpperCase();
                     });
 
-                    var $value = encodeURIComponent($data[$camelCaseKey] || $data[$key]);
+                    var $value = encodeURIComponent($data[$camelCaseKey] === undefined ? $data[$key] : $data[$camelCaseKey]);
                     $template = $template.replace(new RegExp('{{'+$key.toUpperCase()+'}}', 'g'), $value);
                 }
             }
