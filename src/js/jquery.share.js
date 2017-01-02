@@ -62,6 +62,20 @@
             google      : 'https://plus.google.com/share?url={{URL}}'
         };
 
+        var $ariaLabels = {
+            qzone: "QQ空间",
+            qq: "QQ",
+            tencent: "腾讯微博",
+            weibo: "微博",
+            wechat: "微信",
+            douban: "豆瓣",
+            diandian: "点点",
+            linkedin: "LinkedIn",
+            facebook: "Facebook",
+            twitter: "Twitter",
+            google: "Google"
+        };
+
         this.each(function() {
             if ($(this).data('initialized')) {
                 return true;
@@ -96,6 +110,7 @@
                 if (!$link.length) {
                     return true;
                 }
+                $link.prop('aria-label', "分享到 "+$ariaLabels[$name]);
 
                 $link.prop('href', $url);
 
@@ -151,7 +166,7 @@
                 var removeItemIndex = $.inArray(el, $sites);
                 if (removeItemIndex !== -1) {
                     $sites.splice(removeItemIndex, 1);
-                }                
+                }
             });
 
             return $sites;
