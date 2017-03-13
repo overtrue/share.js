@@ -379,7 +379,7 @@
      */
     function dataset(elem) {
         if (elem.dataset) {
-            return elem.dataset;
+            return JSON.parse(JSON.stringify(elem.dataset));
         }
 
         var target = {};
