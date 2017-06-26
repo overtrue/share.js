@@ -17,6 +17,7 @@
    * {
     font-family:"socialshare" !important;
   }
+  .icon-tieba:before { content: "\f20a"; }
   .icon-tencent:before { content: "\f07a"; }
   .icon-qq:before { content: "\f11a"; }
   .icon-weibo:before { content: "\f12a"; }
@@ -59,6 +60,12 @@
     }
   }
 
+  .icon-tieba{
+    color:#0077B5;border-color:#0077B5;
+    &:hover{
+      background:#0077B5;
+    }
+  }
   .icon-weibo{
     color:#ff763b;border-color:#ff763b;
     &:hover{
