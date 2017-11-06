@@ -34,7 +34,7 @@
     bower install social-share.js
     ```
 
-3. 使用 [cdnjs](https://cdnjs.com/libraries/social-share.js)，引入 `share.min.css` 与 `share.min.js` 两个链接就好。 (感谢 [@mdluo](https://github.com/mdluo))
+3. 使用 [cdnjs](https://cdnjs.com/libraries/social-share.js)，引入 `share.min.css` 与 `social-share.min.js` 两个链接就好。 (感谢 [@mdluo](https://github.com/mdluo))
 
 4. 手动下载或者 git clone 本项目。
 
@@ -48,7 +48,7 @@ HTML:
 
 <!--  css & js -->
 <link rel="stylesheet" href="dist/css/share.min.css">
-<script src="dist/js/share.min.js"></script>
+<script src="dist/js/social-share.min.js"></script>
 
 // 当你使用类名为 `social-share` 时不需要手动初始化
 ```
@@ -64,7 +64,8 @@ HTML:
 url                 : '', // 网址，默认使用 window.location.href
 source              : '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
 title               : '', // 标题，默认读取 document.title 或者 <meta name="title" content="share.js" />
-description         : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+origin              : '', // 分享 @ 相关 twitter 账号
+description         : '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
 image               : '', // 图片, 默认取网页中第一个img标签
 sites               : ['qzone', 'qq', 'weibo','wechat', 'douban'], // 启用的站点
 disabled            : ['google', 'facebook', 'twitter'], // 禁用的站点
