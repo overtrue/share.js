@@ -220,9 +220,6 @@
             data['summary'] = data['description'];
         }
 
-
-
-
         return templates[name].replace(/\{\{(\w)(\w*)\}\}/g, function (m, fix, key) {
             var nameKey = name + fix + key.toLowerCase();
             key = (fix + key).toLowerCase();
