@@ -73,6 +73,19 @@ wechatQrcodeTitle   : '微信扫一扫：分享', // 微信二维码提示文字
 wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
 ```
 
+示例代码：
+
+```js
+var $config = {
+    title               : '234',
+    description         : '123',
+    wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
+    wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+};
+
+socialShare('.social-share-cs', $config);
+```
+
 以上选项均可通过标签 `data-xxx` 来设置：
 
 > 驼峰转为中横线，如`wechatQrcodeHelper` 的data标签为`data-wechat-qrcode-helper`
