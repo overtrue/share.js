@@ -147,6 +147,42 @@ socialShare('.social-share-cs', $config);
 
 欢迎贡献代码及提建议！
 
+## Requirejs
+本插件支持使用Requirejs加载，Jquery版本参考如下：
+```js
+requirejs.config({
+  paths: {
+    jquery: '//cdn.bootcss.com/jquery/2.2.4/jquery.min',
+    share: '//cdn.bootcss.com/social-share.js/1.0.15/js/jquery.share.min'
+  },
+  shim: {
+    share:['jquery']
+  }
+})
+
+requirejs(['jquery','share'],function ($){
+  $('.target').share({
+    // settings
+  })
+})
+```
+
+无依赖版本直接加载即可，使用参考如下：
+```js
+requirejs.config({
+  paths: {
+    share: '//cdn.bootcss.com/social-share.js/1.0.15/js/social-share.min'
+  },
+})
+
+requirejs(['share'],function (){
+//   ele:指定初始化的元素，可以是单个元素也可以是元素数组
+  window.socialShare(ele,{
+    // settings
+  })
+})
+```
+
 # 引用
 
 本项目中二维码生成部分用到了开源组件：[lrsjng/jquery-qrcode](https://github.com/lrsjng/jquery-qrcode) (MIT License)
