@@ -5,7 +5,9 @@
   "main": "dist/js/social-share.min.js",
   "dependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"./node_modules/gulp/bin/gulp.js watch",
+    "build": "./node_modules/gulp/bin/gulp.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,7 @@
   "devDependencies": {
     "event-stream": "*",
     "del": "*",
-    "gulp": "*",
+    "gulp": "3.9.1",
     "gulp-autoprefixer": "*",
     "gulp-combine-media-queries": "*",
     "gulp-concat": "*",
