@@ -187,6 +187,37 @@ requirejs(['share'],function (){
 
 本项目中二维码生成部分用到了开源组件：[lrsjng/jquery-qrcode](https://github.com/lrsjng/jquery-qrcode) (MIT License)
 
+# 贡献你的代码
+
+## 安装 gem sass
+
+```
+sudo apt-get install libssl-dev
+sudo apt-get install zlib1g-dev
+mkdir ~/rubysass && cd ~/rubysass
+wget https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.1.tar.gz
+wget https://rubygems.org/rubygems/rubygems-2.6.7.zip
+sudo apt-get update && sudo apt-get install -y tar unzip
+tar zxvf ruby-2.3.1.tar.gz && unzip rubygems-2.6.7.zip
+cd ruby-2.3.1
+./configure && make && sudo make install
+cd ~/rubysass/rubygems-2.6.7
+sudo ruby setup.rb
+cd ~ && sudo gem install sass
+```
+
+## 安装node_modules
+
+```
+npm install
+```
+
+## 进入开发模式
+
+```
+npm run dev
+```
+
 # License
 
  MIT
