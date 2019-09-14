@@ -69,8 +69,8 @@ var clean = function(path, cb) {
 
 gulp.task('css', function(){
   // app css
-  return plugins.rubySass(vendorFiles.styles.concat(appFiles.styles), {
-      style: sassStyle, sourcemap: sourceMap, precision: 2
+  return plugins.sass(vendorFiles.styles.concat(appFiles.styles), {
+      outputStyle: sassStyle, sourcemap: sourceMap, precision: 2
     })
     // .pipe(plugins.concat('style.min.css'))
     .pipe(plugins.autoprefixer({
