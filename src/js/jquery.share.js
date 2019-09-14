@@ -33,7 +33,7 @@
             source: $head.find('[name=site], [name=Site]').attr('content') || document.title,
             title: $head.find('[name=title], [name=Title]').attr('content') || document.title,
             description: $head.find('[name=description], [name=Description]').attr('content') || '',
-            image: $('img:first').prop('src') || '',
+            image: $('img').first().prop('src') || '',
             imageSelector: undefined,
 
             weiboKey: '',
