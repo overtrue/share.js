@@ -67,9 +67,9 @@ var clean = function(path, cb) {
   del([path], {force:true}, cb);
 };
 
-gulp.task('css', function(){
+gulp.task('css', function(cb){
   // app css
-  return plugins.sass(vendorFiles.styles.concat(appFiles.styles), {
+  plugins.sass(vendorFiles.styles.concat(appFiles.styles), {
       outputStyle: sassStyle, sourcemap: sourceMap, precision: 2
     })
     // .pipe(plugins.concat('style.min.css'))
@@ -85,6 +85,7 @@ gulp.task('css', function(){
     .pipe(plugins.notify())
     .pipe(plugins.rename({suffix: '.min'}))
     .pipe(gulp.dest(paths.styles.dest));
+    cb()
 });
 
 gulp.task('jquery.share.js', function () {
@@ -113,7 +114,7 @@ gulp.task('fonts', function(){
 });
 
 
-gulp.task('watch', ['css', 'jquery.share.js', 'share.js', 'fonts'], function () {
+gulp.task('watch', gulp.parallel('css', 'jquery.share.js', 'share.js', 'fonts'), function () {
   gulp.watch(appFiles.styles, ['css']).on('change', function (evt) {
     changeEvent(evt);
   });
@@ -123,4 +124,4 @@ gulp.task('watch', ['css', 'jquery.share.js', 'share.js', 'fonts'], function () 
   });
 });
 
-gulp.task('default', ['css', 'jquery.share.js', 'share.js', 'fonts']);
+gulp.task('default', gulp.parallel( 'css', 'jquery.share.js', 'share.js', 'fonts' ));
