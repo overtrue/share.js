@@ -6,7 +6,7 @@
   "dependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"./node_modules/gulp/bin/gulp.js watch",
+    "dev": "./node_modules/gulp/bin/gulp.js watch",
     "build": "./node_modules/gulp/bin/gulp.js"
   },
   "repository": {
@@ -31,21 +31,21 @@
   },
   "homepage": "https://github.com/overtrue/share.js#readme",
   "devDependencies": {
-    "event-stream": "*",
     "del": "*",
+    "event-stream": "*",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "*",
     "gulp-combine-media-queries": "*",
     "gulp-concat": "*",
     "gulp-cssmin": "*",
+    "gulp-imagemin": "*",
+    "gulp-livereload": "*",
     "gulp-load-plugins": "*",
+    "gulp-notify": "*",
     "gulp-rename": "*",
-    "gulp-ruby-sass": "*",
+    "gulp-sass": "^2.3.2",
     "gulp-size": "*",
     "gulp-uglify": "*",
-    "gulp-util": "*",
-    "gulp-notify": "*",
-    "gulp-imagemin": "*",
-    "gulp-livereload": "*"
+    "gulp-util": "*"
   }
 }
