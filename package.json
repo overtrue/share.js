@@ -3,7 +3,6 @@
   "description": "create social share buttons on your site.",
   "version": "1.1.0",
   "main": "dist/js/social-share.min.js",
-  "dependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./node_modules/gulp/bin/gulp.js watch",
@@ -33,9 +32,8 @@
   "devDependencies": {
     "del": "*",
     "event-stream": "*",
-    "gulp": "3.9.1",
+    "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-combine-media-queries": "*",
     "gulp-concat": "*",
     "gulp-cssmin": "*",
     "gulp-imagemin": "*",
@@ -43,7 +41,7 @@
     "gulp-load-plugins": "*",
     "gulp-notify": "*",
     "gulp-rename": "*",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "*",
     "gulp-size": "*",
     "gulp-uglify": "*",
     "gulp-util": "*"
