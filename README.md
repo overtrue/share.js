@@ -6,7 +6,8 @@
 ![qq20151127-1 2x](https://cloud.githubusercontent.com/assets/1472352/11433126/05f8b0e0-94f4-11e5-9fca-74dc9d1b633f.png)
 
 
-[DEMO](http://overtrue.github.io/share.js/)
+[DEMO-with-jQuery](https://sharejs.netlify.com/demo/test-jquery.html)
+[DEMO-without-jQuery](https://sharejs.netlify.com/demo/test-no-jquery.html)
 
 或者直接浏览我的博客 http://overtrue.me 或者 http://laravel.so 内容页查看效果。
 
