@@ -26,14 +26,16 @@
      */
     $.fn.share = function ($options) {
         var $head = $(document.head);
+	
 
+	
         var $defaults = {
             url: location.href,
             site_url: location.origin,
             source: $head.find('[name=site], [name=Site]').attr('content') || document.title,
             title: $head.find('[name=title], [name=Title]').attr('content') || document.title,
             description: $head.find('[name=description], [name=Description]').attr('content') || '',
-            image: $('img:first').prop('src') || '',
+            image: (hasFirstAPI() ? $('img').first().prop('src') : $('img:first').prop('src')) || '',
             imageSelector: undefined,
 
             weiboKey: '',
@@ -228,6 +230,21 @@
         function isMobileScreen () {
             return $(window).width() <= 768;
         }
+	
+	/**
+	 * Check whether .first() is existed
+	 *
+	 * https://api.jquery.com/first/
+	 * https://api.jquery.com/first-selector/
+	 *
+	 * use .first() when version is greater or equal to 1.4
+	 * @return {boolean}
+	 */
+	function hasFirstAPI () {
+		var versions = $.fn.jquery.split('.')
+		return ( versions[0] !== '1' ||
+			versions[0] === '1' && parseInt(versions[1], 10) >= 4 );
+	}
     };
 
     // Domready after initialization
