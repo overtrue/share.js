@@ -241,6 +241,7 @@
 	 * @return {boolean}
 	 */
 	function hasFirstAPI () {
+		if (!$.fn.jquery) return true; // for Zepto
 		var versions = $.fn.jquery.split('.')
 		return ( versions[0] !== '1' ||
 			versions[0] === '1' && parseInt(versions[1], 10) >= 4 );
