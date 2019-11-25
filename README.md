@@ -1,14 +1,11 @@
 [Share.js](http://overtrue.me/share.js/)
 ===
 
+> 此项目已经年久失修，其实分享就是一个个链接而已，每个链接里传递一些内容，所以定制需求比较高的话建议自己实现，没啥难度。
+
 一键分享到微博、QQ空间、QQ好友、微信、腾讯微博、豆瓣、Facebook、Twitter、Linkedin、Google+、点点等社交网站。
 
 ![qq20151127-1 2x](https://cloud.githubusercontent.com/assets/1472352/11433126/05f8b0e0-94f4-11e5-9fca-74dc9d1b633f.png)
-
-
-[DEMO](http://overtrue.github.io/share.js/)
-
-或者直接浏览我的博客 http://overtrue.me 或者 http://laravel.so 内容页查看效果。
 
 
 # 安装
