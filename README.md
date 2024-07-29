@@ -9,6 +9,9 @@ Share.js
 ![qq20151127-1 2x](https://cloud.githubusercontent.com/assets/1472352/11433126/05f8b0e0-94f4-11e5-9fca-74dc9d1b633f.png)
 
 
+[DEMO-with-jQuery](https://sharejs.netlify.com/demo/test-jquery.html)
+[DEMO-without-jQuery](https://sharejs.netlify.com/demo/test-no-jquery.html)
+
 # 安装
 
 有3种安装方式：
